@@ -1,8 +1,8 @@
 {
-    "version": "1.0.0",
+    "version": "0.0.2",
     "discord": {
         "clientId": "502766526642782208",
-        "smallImageText": "AdlC Launcher",
+        "smallImageText": "Augure de la Chouette",
         "smallImageKey": "seal-circle"
     },
     "java": {
@@ -13,14 +13,14 @@
         {
             "id": "AdlC-1.16.5",
             "name": "AdlC Network",
-            "description": "Main WesterosCraft server. Connect to enter the Realm.",
+            "description": "Serveurs principaux AdlC. Un nouveau monde !",
             "icon": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/server-prod.png",
             "version": "0.0.6",
-            "address": "mc.westeroscraft.com",
+            "address": "mc.secteur42.org",
             "minecraftVersion": "1.16.5",
             "discord": {
                 "shortId": "Production",
-                "largeImageText": "WesterosCraft Production Server",
+                "largeImageText": "AdlC Network",
                 "largeImageKey": "server-prod"
             },
             "mainServer": true,
