@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const builder = require('electron-builder')
 const Platform = builder.Platform
 
@@ -19,9 +20,9 @@ builder.build({
     targets: (process.argv[2] != null && Platform[process.argv[2]] != null ? Platform[process.argv[2]] : getCurrentPlatform()).createTarget(),
     config: {
         appId: 'adlclauncher',
-        productName: 'AdlC Launcher',
+        productName: 'AdlCLauncher',
         artifactName: '${productName}-setup-${version}.${ext}',
-        copyright: 'Copyright © 2018-2021 Daniel Scalzi & Avnyr Tokirawa',
+        copyright: 'Copyright © 2018-2021 Daniel Scalzi & AdlC',
         directories: {
             buildResources: 'build',
             output: 'dist'

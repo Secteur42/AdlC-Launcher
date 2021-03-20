@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 // Requirements
 const AdmZip        = require('adm-zip')
 const async         = require('async')
