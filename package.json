@@ -1,6 +1,6 @@
 {
   "name": "adlclauncher",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "productName": "Lanceur de l'augure",
   "description": "Lanceur de jeu Minecraft personalisé",
   "author": "Avnyr Tokirawa (https://github.com/AvnyrTokirawa)",
@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "electron": "^8.2.5",
+    "electron": ">=9.4.0",
     "electron-builder": "^22.6.0",
     "eslint": "^7.0.0"
   },
