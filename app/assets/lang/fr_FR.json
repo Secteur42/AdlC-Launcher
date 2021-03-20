@@ -5,15 +5,15 @@
     "js": {
         "login": {
             "error": {
-                "invalidValue": "* Invalid Value",
-                "requiredValue": "* Required",
+                "invalidValue": "* Valeur invalide",
+                "requiredValue": "* Obligatoire",
                 "userMigrated": {
                     "title": "Erreur de connexion:<br>Information invalide",
                     "desc": "Vous avez tenté de vous connecter avec un compte migré. Essayez à nouveau en utilisant l'adresse e-mail du compte comme nom d'utilisateur."
                 },
                 "invalidCredentials": {
                     "title": "Erreur de connexion:<br>Information invalide",
-                    "desc": "The email or password you've entered is incorrect. Please try again."
+                    "desc": "L'e-mail ou le mot de passe que vous avez entré est incorrect. Veuillez réessayer."
                 },
                 "rateLimit": {
                     "title": "Erreur de connexion:<br>Trop de tentative",
