@@ -1,6 +1,7 @@
+require('@electron/remote/main').initialize()
+
 // Requirements
-const {app, BrowserWindow, ipcMain} = require('electron')
-const Menu                          = require('electron').Menu
+const { app, BrowserWindow, ipcMain, Menu } = require('electron')
 const autoUpdater                   = require('electron-updater').autoUpdater
 const ejse                          = require('ejs-electron')
 const fs                            = require('fs')
@@ -103,7 +104,9 @@ function createWindow() {
         webPreferences: {
             preload: path.join(__dirname, 'app', 'assets', 'js', 'preloader.js'),
             nodeIntegration: true,
-            contextIsolation: false
+            contextIsolation: false,
+            enableRemoteModule: true,
+            worldSafeExecuteJavaScript: true
         },
         backgroundColor: '#171614'
     })
@@ -194,16 +197,19 @@ function createMenu() {
 }
 
 function getPlatformIcon(filename){
-    const opSys = process.platform
-    if (opSys === 'darwin') {
-        filename = filename + '.icns'
-    } else if (opSys === 'win32') {
-        filename = filename + '.ico'
-    } else {
-        filename = filename + '.png'
+    let ext
+    switch(process.platform) {
+        case 'win32':
+            ext = 'ico'
+            break
+        case 'darwin':
+        case 'linux':
+        default:
+            ext = 'png'
+            break
     }
 
-    return path.join(__dirname, 'app', 'assets', 'images', filename)
+    return path.join(__dirname, 'app', 'assets', 'images', `${filename}.${ext}`)
 }
 
 app.on('ready', createWindow)

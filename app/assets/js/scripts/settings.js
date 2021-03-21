@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 // Requirements
 const os     = require('os')
 const semver = require('semver')
@@ -43,15 +42,34 @@ bindSettingsSelect()
 
 
 function bindFileSelectors(){
-    for(let ele of document.getElementsByClassName('settingsFileSelSel')){
-        if(ele.id === 'settingsJavaExecSel'){
-            ele.onchange = (e) => {
-                ele.previousElementSibling.value = ele.files[0].path
-                populateJavaExecDetails(ele.previousElementSibling.value)
+    for(let ele of document.getElementsByClassName('settingsFileSelButton')){
+        
+        ele.onclick = async e => {
+            const isJavaExecSel = ele.id === 'settingsJavaExecSel'
+            const directoryDialog = ele.hasAttribute('dialogDirectory') && ele.getAttribute('dialogDirectory') == 'true'
+            const properties = directoryDialog ? ['openDirectory', 'createDirectory'] : ['openFile']
+
+            const options = {
+                properties
             }
-        } else {
-            ele.onchange = (e) => {
-                ele.previousElementSibling.value = ele.files[0].path
+
+            if(ele.hasAttribute('dialogTitle')) {
+                options.title = ele.getAttribute('dialogTitle')
+            }
+
+            if(isJavaExecSel && process.platform === 'win32') {
+                options.filters = [
+                    { name: 'Executables', extensions: ['exe'] },
+                    { name: 'All Files', extensions: ['*'] }
+                ]
+            }
+
+            const res = await remote.dialog.showOpenDialog(remote.getCurrentWindow(), options)
+            if(!res.canceled) {
+                ele.previousElementSibling.value = res.filePaths[0]
+                if(isJavaExecSel) {
+                    populateJavaExecDetails(ele.previousElementSibling.value)
+                }
             }
         }
     }
@@ -695,7 +713,7 @@ function bindDropinModFileSystemButton(){
     const fsBtn = document.getElementById('settingsDropinFileSystemButton')
     fsBtn.onclick = () => {
         DropinModUtil.validateDir(CACHE_SETTINGS_MODS_DIR)
-        shell.openItem(CACHE_SETTINGS_MODS_DIR)
+        shell.openPath(CACHE_SETTINGS_MODS_DIR)
     }
     fsBtn.ondragenter = e => {
         e.dataTransfer.dropEffect = 'move'
@@ -819,7 +837,7 @@ function bindShaderpackButton() {
     spBtn.onclick = () => {
         const p = path.join(CACHE_SETTINGS_INSTANCE_DIR, 'shaderpacks')
         DropinModUtil.validateDir(p)
-        shell.openItem(p)
+        shell.openPath(p)
     }
     spBtn.ondragenter = e => {
         e.dataTransfer.dropEffect = 'move'
@@ -1121,10 +1139,11 @@ function populateJavaExecDetails(execPath){
     const jg = new JavaGuard(DistroManager.getDistribution().getServer(ConfigManager.getSelectedServer()).getMinecraftVersion())
     jg._validateJavaBinary(execPath).then(v => {
         if(v.valid){
+            const vendor = v.vendor != null ? ` (${v.vendor})` : ''
             if(v.version.major < 9) {
-                settingsJavaExecDetails.innerHTML = `Selected: Java ${v.version.major} Update ${v.version.update} (x${v.arch})`
+                settingsJavaExecDetails.innerHTML = `Selected: Java ${v.version.major} Update ${v.version.update} (x${v.arch})${vendor}`
             } else {
-                settingsJavaExecDetails.innerHTML = `Selected: Java ${v.version.major}.${v.version.minor}.${v.version.revision} (x${v.arch})`
+                settingsJavaExecDetails.innerHTML = `Selected: Java ${v.version.major}.${v.version.minor}.${v.version.revision} (x${v.arch})${vendor}`
             }
         } else {
             settingsJavaExecDetails.innerHTML = 'Invalid Selection'
@@ -1178,11 +1197,11 @@ function isPrerelease(version){
 function populateVersionInformation(version, valueElement, titleElement, checkElement){
     valueElement.innerHTML = version
     if(isPrerelease(version)){
-        titleElement.innerHTML = 'Version dev'
+        titleElement.innerHTML = 'Pre-release'
         titleElement.style.color = '#ff886d'
         checkElement.style.background = '#ff886d'
     } else {
-        titleElement.innerHTML = 'Version stable'
+        titleElement.innerHTML = 'Stable Release'
         titleElement.style.color = null
         checkElement.style.background = null
     }
@@ -1201,7 +1220,7 @@ function populateAboutVersionInformation(){
  */
 function populateReleaseNotes(){
     $.ajax({
-        url: 'https://github.com/Secteur42/AdlC-Launcher/releases.atom',
+        url: 'https://github.com/dscalzi/HeliosLauncher/releases.atom',
         success: (data) => {
             const version = 'v' + remote.app.getVersion()
             const entries = $(data).find('entry')
@@ -1221,7 +1240,7 @@ function populateReleaseNotes(){
         },
         timeout: 2500
     }).catch(err => {
-        settingsAboutChangelogText.innerHTML = 'Échec du chargement des notes de publication.'
+        settingsAboutChangelogText.innerHTML = 'Failed to load release notes.'
     })
 }
 
@@ -1269,27 +1288,27 @@ function settingsUpdateButtonStatus(text, disabled = false, handler = null){
  */
 function populateSettingsUpdateInformation(data){
     if(data != null){
-        settingsUpdateTitle.innerHTML = `Nouv ${isPrerelease(data.version) ? 'Pre-release' : 'Release'} Disponible`
+        settingsUpdateTitle.innerHTML = `New ${isPrerelease(data.version) ? 'Pre-release' : 'Release'} Available`
         settingsUpdateChangelogCont.style.display = null
         settingsUpdateChangelogTitle.innerHTML = data.releaseName
         settingsUpdateChangelogText.innerHTML = data.releaseNotes
         populateVersionInformation(data.version, settingsUpdateVersionValue, settingsUpdateVersionTitle, settingsUpdateVersionCheck)
         
         if(process.platform === 'darwin'){
-            settingsUpdateButtonStatus('Télécharger à partir de GitHub<span style="font-size: 10px;color: gray;text-shadow: none !important;">Fermez le lanceur et exécutez le dmg pour mettre à jour.</span>', false, () => {
+            settingsUpdateButtonStatus('Download from GitHub<span style="font-size: 10px;color: gray;text-shadow: none !important;">Close the launcher and run the dmg to update.</span>', false, () => {
                 shell.openExternal(data.darwindownload)
             })
         } else {
-            settingsUpdateButtonStatus('Téléchargement..', true)
+            settingsUpdateButtonStatus('Downloading..', true)
         }
     } else {
-        settingsUpdateTitle.innerHTML = 'Vous exécutez la dernière version'
+        settingsUpdateTitle.innerHTML = 'You Are Running the Latest Version'
         settingsUpdateChangelogCont.style.display = 'none'
         populateVersionInformation(remote.app.getVersion(), settingsUpdateVersionValue, settingsUpdateVersionTitle, settingsUpdateVersionCheck)
-        settingsUpdateButtonStatus('Vérifier les mises à jour', false, () => {
+        settingsUpdateButtonStatus('Check for Updates', false, () => {
             if(!isDev){
                 ipcRenderer.send('autoUpdateAction', 'checkForUpdate')
-                settingsUpdateButtonStatus('Vérification des mises à jour..', true)
+                settingsUpdateButtonStatus('Checking for Updates..', true)
             }
         })
     }

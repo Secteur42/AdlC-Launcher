@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-// eslint-disable-next-line linebreak-style
 const {ipcRenderer} = require('electron')
 const fs            = require('fs-extra')
 const os            = require('os')
