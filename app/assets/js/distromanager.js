@@ -537,7 +537,7 @@ exports.pullRemote = function(){
         return exports.pullLocal()
     }
     return new Promise((resolve, reject) => {
-        const distroURL = 'https://lib.secteur42.org/dl/launcher/distribution.json'
+        const distroURL = 'https://raw.githubusercontent.com/Secteur42/AdlC-Launcher/main/app/assets/distribution.json'
         const opts = {
             url: distroURL,
             timeout: 2500
