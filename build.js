@@ -19,10 +19,10 @@ function getCurrentPlatform(){
 builder.build({
     targets: (process.argv[2] != null && Platform[process.argv[2]] != null ? Platform[process.argv[2]] : getCurrentPlatform()).createTarget(),
     config: {
-        appId: 'helioslauncher',
-        productName: 'Helios Launcher',
+        appId: 'adlclauncher',
+        productName: 'AdlC-Launcher',
         artifactName: '${productName}-setup-${version}.${ext}',
-        copyright: 'Copyright © 2018-2020 Daniel Scalzi',
+        copyright: 'Copyright © 2018-2021 Daniel Scalzi & AdlC',
         directories: {
             buildResources: 'build',
             output: 'dist'
@@ -47,8 +47,8 @@ builder.build({
         },
         linux: {
             target: 'AppImage',
-            maintainer: 'Daniel Scalzi',
-            vendor: 'Daniel Scalzi',
+            maintainer: 'Avnyr Tokirawa',
+            vendor: 'Avnyr Tokirawa',
             synopsis: 'Modded Minecraft Launcher',
             description: 'Custom launcher which allows users to join modded servers. All mods, configurations, and updates are handled automatically.',
             category: 'Game'
@@ -63,7 +63,7 @@ builder.build({
         asar: true
     }
 }).then(() => {
-    console.log('Build complete!')
+    console.log('Build parfait!')
 }).catch(err => {
     console.error('Error during build!', err)
 })
