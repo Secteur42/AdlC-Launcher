@@ -540,7 +540,7 @@ exports.pullRemote = function(){
         const distroURL = 'https://raw.githubusercontent.com/Secteur42/AdlC-Launcher/main/app/assets/distribution.json'
         const opts = {
             url: distroURL,
-            timeout: 2500
+            timeout: 5500
         }
         const distroDest = path.join(ConfigManager.getLauncherDirectory(), 'distribution.json')
         request(opts, (error, resp, body) => {

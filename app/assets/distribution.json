@@ -1,5 +1,5 @@
 {
-    "version": "0.0.9",
+    "version": "0.0.10",
     "discord": {
         "clientId": "822860697721241601",
         "smallImageText": "AdlC Network",
@@ -9,7 +9,7 @@
     "servers": [
         {
             "id": "srv-rp",
-            "name": "Adlc | Secteur 42 - Rôleplay",
+            "name": "Secteur 42 - Rôleplay (non fonctionelle)",
             "description": "Serveur rôleplay whitelisté, voir discord.",
             "icon": "https://lib.secteur42.org/dl/f/logo-rp.png",
             "version": "0.0.6",
