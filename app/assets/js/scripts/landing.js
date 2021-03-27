@@ -323,7 +323,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
                 // Show this information to the user.
                 setOverlayContent(
                     'Non compatible<br>Installation de Java trouvé',
-                    'In order to join WesterosCraft, you need a 64-bit installation of Java 8. Would you like us to install a copy? By installing, you accept <a href="http://www.oracle.com/technetwork/java/javase/terms/license/index.html">Oracle\'s license agreement</a>.',
+                    'Pour rejoindre WesterosCraft, vous avez besoin de Java 8 64bits. Souhaitez-vous que nous en installions une copie? En installant, vous acceptez <a href="http://www.oracle.com/technetwork/java/javase/terms/license/index.html">L\'accord de licence Oracle\'s</a>.',
                     'Install Java',
                     'Install Manually'
                 )
@@ -599,23 +599,23 @@ function dlAsync(login = true){
                         progressListener = null
                     }
 
-                    setLaunchDetails('Preparing to launch..')
+                    setLaunchDetails('Préparation au lancement ..')
                     break
             }
         } else if(m.context === 'error'){
             switch(m.data){
                 case 'download':
-                    loggerLaunchSuite.error('Error while downloading:', m.error)
+                    loggerLaunchSuite.error('Erreur lors du téléchargement:', m.error)
                     
                     if(m.error.code === 'ENOENT'){
                         showLaunchFailure(
-                            'Download Error',
-                            'Could not connect to the file server. Ensure that you are connected to the internet and try again.'
+                            'Erreur de téléchargement',
+                            'Impossible de se connecter au serveur de fichiers. Assurez-vous que vous êtes connecté à Internet et réessayez.'
                         )
                     } else {
                         showLaunchFailure(
-                            'Download Error',
-                            'Check the console (CTRL + Shift + i) for more details. Please try again.'
+                            'Erreur de téléchargement',
+                            'Vérifiez la console (CTRL + Shift + i) pour plus de détails. Veuillez réessayer.'
                         )
                     }
 
@@ -654,7 +654,7 @@ function dlAsync(login = true){
                 const onLoadComplete = () => {
                     toggleLaunchArea(false)
                     if(hasRPC){
-                        DiscordWrapper.updateDetails('Loading game..')
+                        DiscordWrapper.updateDetails('Jeu en cours de chargement..')
                     }
                     proc.stdout.on('data', gameStateChange)
                     proc.stdout.removeListener('data', tempListener)
@@ -681,9 +681,9 @@ function dlAsync(login = true){
                 const gameStateChange = function(data){
                     data = data.trim()
                     if(SERVER_JOINED_REGEX.test(data)){
-                        DiscordWrapper.updateDetails('Exploring the Realm!')
+                        DiscordWrapper.updateDetails('Explorer l\'univers!')
                     } else if(GAME_JOINED_REGEX.test(data)){
-                        DiscordWrapper.updateDetails('Sailing to Westeros!')
+                        DiscordWrapper.updateDetails('Voile vers Autlandia!')
                     }
                 }
 
@@ -703,7 +703,7 @@ function dlAsync(login = true){
                     proc.stdout.on('data', tempListener)
                     proc.stderr.on('data', gameErrorListener)
 
-                    setLaunchDetails('Done. Enjoy the server!')
+                    setLaunchDetails('Fait. Profitez du serveur!')
 
                     // Init Discord Hook
                     const distro = DistroManager.getDistribution()
@@ -711,7 +711,7 @@ function dlAsync(login = true){
                         DiscordWrapper.initRPC(distro.discord, serv.discord)
                         hasRPC = true
                         proc.on('close', (code, signal) => {
-                            loggerLaunchSuite.log('Shutting down Discord Rich Presence..')
+                            loggerLaunchSuite.log('Arrêt de Discord Rich Presence.')
                             DiscordWrapper.shutdownRPC()
                             hasRPC = false
                             proc = null
@@ -720,8 +720,8 @@ function dlAsync(login = true){
 
                 } catch(err) {
 
-                    loggerLaunchSuite.error('Error during launch', err)
-                    showLaunchFailure('Error During Launch', 'Please check the console (CTRL + Shift + i) for more details.')
+                    loggerLaunchSuite.error('Erreur lors du lancement', err)
+                    showLaunchFailure('Erreur lors du lancement ',' Veuillez vérifier la console (CTRL + Maj + i) pour plus de détails.')
 
                 }
             }
@@ -735,22 +735,22 @@ function dlAsync(login = true){
     // Begin Validations
 
     // Validate Forge files.
-    setLaunchDetails('Loading server information..')
+    setLaunchDetails('Chargement des informations sur le serveur.')
 
     refreshDistributionIndex(true, (data) => {
         onDistroRefresh(data)
         serv = data.getServer(ConfigManager.getSelectedServer())
         aEx.send({task: 'execute', function: 'validateEverything', argsArr: [ConfigManager.getSelectedServer(), DistroManager.isDevMode()]})
     }, (err) => {
-        loggerLaunchSuite.log('Error while fetching a fresh copy of the distribution index.', err)
+        loggerLaunchSuite.log('Erreur lors de la récupération d\'une nouvelle copie de l\'index de distribution.', err)
         refreshDistributionIndex(false, (data) => {
             onDistroRefresh(data)
             serv = data.getServer(ConfigManager.getSelectedServer())
             aEx.send({task: 'execute', function: 'validateEverything', argsArr: [ConfigManager.getSelectedServer(), DistroManager.isDevMode()]})
         }, (err) => {
-            loggerLaunchSuite.error('Unable to refresh distribution index.', err)
+            loggerLaunchSuite.error('Impossible d\'actualiser l\'index de distribution.', err)
             if(DistroManager.getDistribution() == null){
-                showLaunchFailure('Fatal Error', 'Could not load a copy of the distribution index. See the console (CTRL + Shift + i) for more details.')
+                showLaunchFailure('Erreur fatale', 'Impossible de charger une copie de l\'index de distribution. Voir la console (CTRL + Shift + i) pour plus de détails.')
 
                 // Disconnect from AssetExec
                 aEx.disconnect()

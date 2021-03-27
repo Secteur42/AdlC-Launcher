@@ -25,16 +25,16 @@
     <div id="settingsContainerRight">
         <div id="settingsTabAccount" class="settingsTab">
             <div class="settingsTabHeader">
-                <span class="settingsTabHeaderText">Account Settings</span>
-                <span class="settingsTabHeaderDesc">Add new accounts or manage existing ones.</span>
+                <span class="settingsTabHeaderText">Paramètres du compte</span>
+                <span class="settingsTabHeaderDesc">Ajoutez de nouveaux comptes ou gérez les comptes existants.</span>
             </div>
             <div id="settingsAddAccountContainer">
                 <button id="settingsAddAccount">
-                    <span id="settingsAddAccountText">&#43; Add Account</span>
+                    <span id="settingsAddAccountText">&#43; Ajouter un compte</span>
                 </button>
             </div>
             <div id="settingsCurrentAccountsHeader">
-                <span class="settingsFieldTitle">Current Accounts</span>
+                <span class="settingsFieldTitle">Compte courant</span>
             </div>
             <div id="settingsCurrentAccounts">
                 <!-- Auth accounts populated here. -->
@@ -42,11 +42,11 @@
         </div>
         <div id="settingsTabMinecraft" class="settingsTab" style="display: none;">
             <div class="settingsTabHeader">
-                <span class="settingsTabHeaderText">Minecraft Settings</span>
-                <span class="settingsTabHeaderDesc">Options related to game launch.</span>
+                <span class="settingsTabHeaderText">Réglages de Minecraft</span>
+                <span class="settingsTabHeaderDesc">Options liées au lancement du jeu.</span>
             </div>
             <div id="settingsGameResolutionContainer">
-                <span class="settingsFieldTitle">Game Resolution</span>
+                <span class="settingsFieldTitle">Résolution d'affichage</span>
                 <div id="settingsGameResolutionContent">
                     <input type="number" id="settingsGameWidth" min="0" cValue="GameWidth">
                     <div id="settingsGameResolutionCross">&#10006;</div>
@@ -55,7 +55,7 @@
             </div>
             <div class="settingsFieldContainer">
                 <div class="settingsFieldLeft">
-                    <span class="settingsFieldTitle">Launch in fullscreen.</span>
+                    <span class="settingsFieldTitle">Lancer en plein écran.</span>
                 </div>
                 <div class="settingsFieldRight">
                     <label class="toggleSwitch">
@@ -66,7 +66,7 @@
             </div>
             <div class="settingsFieldContainer">
                 <div class="settingsFieldLeft">
-                    <span class="settingsFieldTitle">Automatically connect to the server on launch.</span>
+                    <span class="settingsFieldTitle">Connectez automatiquement au serveur au lancement.</span>
                 </div>
                 <div class="settingsFieldRight">
                     <label class="toggleSwitch">
@@ -77,8 +77,8 @@
             </div>
             <div class="settingsFieldContainer">
                 <div class="settingsFieldLeft">
-                    <span class="settingsFieldTitle">Launch game process detached from launcher.</span>
-                    <span class="settingsFieldDesc">If the game is not detached, closing the launcher will also close the game.</span>
+                    <span class="settingsFieldTitle">Lancer le processus de jeu détaché du lanceur.</span>
+                    <span class="settingsFieldDesc">Si le jeu n'est pas détaché, la fermeture du lanceur fermera également le jeu.</span>
                 </div>
                 <div class="settingsFieldRight">
                     <label class="toggleSwitch">
@@ -90,8 +90,8 @@
         </div>
         <div id="settingsTabMods" class="settingsTab" style="display: none;">
             <div class="settingsTabHeader">
-                <span class="settingsTabHeaderText">Mod Settings</span>
-                <span class="settingsTabHeaderDesc">Enable or disable mods.</span>
+                <span class="settingsTabHeaderText">Réglages des mods</span>
+                <span class="settingsTabHeaderDesc">Activez ou désactivez des mods.</span>
             </div>
             <div id="settingsSelServContainer">
                 <div id="settingsSelServContent">
@@ -99,37 +99,37 @@
                 </div>
                 <div id="settingsSwitchServerContainer">
                     <div id="settingsSwitchServerContent">
-                        <button id="settingsSwitchServerButton">Switch</button>
+                        <button id="settingsSwitchServerButton">Changer</button>
                     </div>
                 </div>
             </div>
             <div id="settingsModsContainer">
                 <div id="settingsReqModsContainer">
-                    <div class="settingsModsHeader">Required Mods</div>
+                    <div class="settingsModsHeader">Mods requis</div>
                     <div id="settingsReqModsContent">
 
                     </div>
                 </div>
                 <div id="settingsOptModsContainer">
-                    <div class="settingsModsHeader">Optional Mods</div>
+                    <div class="settingsModsHeader">Mods optionnels</div>
                     <div id="settingsOptModsContent">
                         
                     </div>
                 </div>
                 <div id="settingsDropinModsContainer">
-                    <div class="settingsModsHeader">Drop-in Mods</div>
-                    <button id="settingsDropinFileSystemButton">+ Add Mods <span id="settingsDropinRefreshNote">(F5 to Refresh)</span></button>
+                    <div class="settingsModsHeader">Mods personalisés</div>
+                    <button id="settingsDropinFileSystemButton">+ Ajouter <span id="settingsDropinRefreshNote">(F5 pour actualisé)</span></button>
                     <div id="settingsDropinModsContent">
                         
                     </div>
                 </div>
                 <div id="settingsShadersContainer">
                     <div class="settingsModsHeader">Shaderpacks</div>
-                    <div id="settingsShaderpackDesc">Enable or disable shaders. Please note, shaders will only run smoothly on powerful setups. You may add custom packs here.</div>
+                    <div id="settingsShaderpackDesc">Activez ou désactivez les shaders. Veuillez noter que les shaders ne fonctionneront correctement que sur des configurations puissantes. Vous pouvez ajouter des packs personnalisés ici.</div>
                     <div id="settingsShaderpackWrapper">
                         <button id="settingsShaderpackButton"> + </button>
                         <div class="settingsSelectContainer">
-                            <div class="settingsSelectSelected" id="settingsShadersSelected">Select Shaderpack</div>
+                            <div class="settingsSelectSelected" id="settingsShadersSelected">Sélectionner un shaderpack</div>
                             <div class="settingsSelectOptions" id="settingsShadersOptions" hidden>
 
                             </div>
@@ -140,44 +140,44 @@
         </div>
         <div id="settingsTabJava" class="settingsTab" style="display: none;">
             <div class="settingsTabHeader">
-                <span class="settingsTabHeaderText">Java Settings</span>
-                <span class="settingsTabHeaderDesc">Manage the Java configuration (advanced).</span>
+                <span class="settingsTabHeaderText">Réglages de Java</span>
+                <span class="settingsTabHeaderDesc">Gérer la configuration Java (avancé).</span>
             </div>
             <div id="settingsMemoryContainer">
-                <div id="settingsMemoryTitle">Memory</div>
+                <div id="settingsMemoryTitle">Mémoire</div>
                 <div id="settingsMemoryContent">
                     <div id="settingsMemoryContentLeft">
                         <div class="settingsMemoryContentItem">
                             <span class="settingsMemoryHeader">Maximum RAM</span>
                             <div class="settingsMemoryActionContainer">
-                                <div id="settingsMaxRAMRange" class="rangeSlider" cValue="MaxRAM" min="3" max="8" value="3" step="0.5">
+                                <div id="settingsMaxRAMRange" class="rangeSlider" cValue="MaxRAM" min="3" max="8" value="4" step="0.5">
                                     <div class="rangeSliderBar"></div>
                                     <div class="rangeSliderTrack"></div>
                                 </div>
-                                <span id="settingsMaxRAMLabel" class="settingsMemoryLabel">3G</span>
+                                <span id="settingsMaxRAMLabel" class="settingsMemoryLabel">8Go</span>
                             </div>
                         </div>
                         <div class="settingsMemoryContentItem">
                             <span class="settingsMemoryHeader">Minimum RAM</span>
                             <div class="settingsMemoryActionContainer">
-                                <div id="settingsMinRAMRange" class="rangeSlider" cValue="MinRAM" min="3" max="8" value="3" step="0.5">
+                                <div id="settingsMinRAMRange" class="rangeSlider" cValue="MinRAM" min="2" max="8" value="2" step="0.5">
                                     <div class="rangeSliderBar"></div>
                                     <div class="rangeSliderTrack"></div>
                                 </div>
-                                <span id="settingsMinRAMLabel" class="settingsMemoryLabel">3G</span>
+                                <span id="settingsMinRAMLabel" class="settingsMemoryLabel">2Go</span>
                             </div>
                         </div>
-                        <div id="settingsMemoryDesc">The recommended minimum RAM is 3 gigabytes. Setting the minimum and maximum values to the same value may reduce lag.</div>
+                        <div id="settingsMemoryDesc">La RAM minimale recommandée est de 3 gigaoctets. La définition des valeurs minimale et maximale sur la même valeur peut réduire les lags</div>
                     </div>
                     <div id="settingsMemoryContentRight">
                         <div id="settingsMemoryStatus">
                             <div class="settingsMemoryStatusContainer">
                                 <span class="settingsMemoryStatusTitle">Total</span>
-                                <span id="settingsMemoryTotal" class="settingsMemoryStatusValue">16G</span>
+                                <span id="settingsMemoryTotal" class="settingsMemoryStatusValue">xGo</span>
                             </div>
                             <div class="settingsMemoryStatusContainer">
-                                <span class="settingsMemoryStatusTitle">Available</span>
-                                <span id="settingsMemoryAvail" class="settingsMemoryStatusValue">7.3G</span>
+                                <span class="settingsMemoryStatusTitle">Disponible</span>
+                                <span id="settingsMemoryAvail" class="settingsMemoryStatusValue">xGo</span>
                             </div>
                         </div>
                     </div>
@@ -204,13 +204,13 @@
                         </div>
                         <input class="settingsFileSelVal" id="settingsJavaExecVal" type="text" value="null" cValue="JavaExecutable" disabled>
                         <input class="settingsFileSelSel" id="settingsJavaExecSel" type="file" <%= process.platform === 'win32' ? 'accept=.exe' : '' %>>
-                        <label class="settingsFileSelLabel" for="settingsJavaExecSel">Choose File</label>
+                        <label class="settingsFileSelLabel" for="settingsJavaExecSel"></label>
                     </div>
                 </div>
-                <div class="settingsFileSelDesc">The Java executable is validated before game launch. <strong>Requires Java 8 x64.</strong><br>The path should end with <strong>bin<%= process.platform === 'win32' ? '\\javaw.exe' : '/java' %></strong>.</div>
+                <div class="settingsFileSelDesc">L'exécutable Java est validé avant le lancement du jeu. <strong>Requis : Java 8 x64.</strong><br>Le chemin doit se terminer par <strong>bin<%= process.platform === 'win32' ? '\\javaw.exe' : '/java' %></strong>.</div>
             </div>
             <div id="settingsJVMOptsContainer">
-                <div id="settingsJVMOptsTitle">Additional JVM Options</div>
+                <div id="settingsJVMOptsTitle">Option JVM additionels</div>
                 <div id="settingsJVMOptsContent">
                     <div class="settingsFileSelIcon">
                         <svg class="settingsFileSelSVG" x="0px" y="0px" viewBox="0 0 305.001 305.001">
@@ -286,7 +286,7 @@
                             <span id="settingsAboutCurrentVersionTitle">Version stable</span>
                             <div id="settingsAboutCurrentVersionLine">
                                 <span id="settingsAboutCurrentVersionText">Version </span>
-                                <span id="settingsAboutCurrentVersionValue">0.0.1-alpha.12</span>
+                                <span id="settingsAboutCurrentVersionValue">0.0.x</span>
                             </div>
                         </div>
                     </div>
@@ -307,23 +307,23 @@
                         <div class="settingsChangelogTitle">Changelog</div>
                     </div>
                     <div class="settingsChangelogText">
-                        No Release Notes
+                        Aucune note de publication
                     </div>
                 </div>
                 <div class="settingsChangelogActions">
-                    <a class="settingsChangelogButton settingsAboutButton" href="#">View Release Notes on GitHub</a>
+                    <a class="settingsChangelogButton settingsAboutButton" href="https://github.com/Secteur42/AdlC-Launcher/releases">Afficher les notes de publication sur GitHub</a>
                 </div>
             </div>
         </div>
         <div id="settingsTabUpdate" class="settingsTab" style="display: none;">
             <div class="settingsTabHeader">
                 <span class="settingsTabHeaderText">Mise à jour du launcher</span>
-                <span class="settingsTabHeaderDesc">Download, install, and review updates for the launcher.</span>
+                <span class="settingsTabHeaderDesc">Téléchargez, installez et consultez les mises à jour du lanceur.</span>
             </div>
             <div id="settingsUpdateStatusContainer">
                 <div id="settingsUpdateStatusContent">
                     <div id="settingsUpdateStatusHeadline">
-                        <span id="settingsUpdateTitle">You Are Running the Latest Version</span>
+                        <span id="settingsUpdateTitle">Vous exécutez la dernière version.</span>
                     </div>
                     <div id="settingsUpdateVersion">
                         <div id="settingsUpdateVersionCheck">&#10003;</div>
@@ -336,18 +336,18 @@
                         </div>
                     </div>
                     <div id="settingsUpdateActionContainer">
-                        <button id="settingsUpdateActionButton">Check for Updates</button>
+                        <button id="settingsUpdateActionButton">Vérifier les mises à jour ?</button>
                     </div>
                 </div>
             </div>
             <div class="settingsChangelogContainer">
                 <div class="settingsChangelogContent">
                     <div class="settingsChangelogHeadline">
-                        <div class="settingsChangelogLabel">What's New</div>
-                        <div class="settingsChangelogTitle">Update Release Notes</div>
+                        <div class="settingsChangelogLabel">Quoi de neuf ?</div>
+                        <div class="settingsChangelogTitle">Mettre à jour les notes de publication</div>
                     </div>
                     <div class="settingsChangelogText">
-                        No Release Notes
+                        Aucune note de publication
                     </div>
                 </div>
             </div>

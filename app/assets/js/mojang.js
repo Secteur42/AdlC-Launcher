@@ -19,19 +19,19 @@ const statuses = [
     {
         service: 'session.minecraft.net',
         status: 'grey',
-        name: 'Multiplayer Session Service',
+        name: 'Multijoueurs',
         essential: true
     },
     {
         service: 'authserver.mojang.com',
         status: 'grey',
-        name: 'Authentication Service',
+        name: 'Authentification',
         essential: true
     },
     {
         service: 'textures.minecraft.net',
         status: 'grey',
-        name: 'Minecraft Skins',
+        name: 'Skin',
         essential: false
     },
     {
@@ -67,9 +67,9 @@ const statuses = [
 exports.statusToHex = function(status){
     switch(status.toLowerCase()){
         case 'green':
-            return '#a5c325'
+            return '#38b000'
         case 'yellow':
-            return '#eac918'
+            return '#eeef20'
         case 'red':
             return '#c32625'
         case 'grey':

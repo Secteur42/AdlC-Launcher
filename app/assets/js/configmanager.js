@@ -87,7 +87,7 @@ const DEFAULT_CONFIG = {
             resHeight: 720,
             fullscreen: false,
             autoConnect: true,
-            launchDetached: true
+            launchDetached: false
         },
         launcher: {
             allowPrerelease: false,
@@ -144,8 +144,8 @@ exports.load = function(){
             doValidate = true
         } catch (err){
             logger.error(err)
-            logger.log('Configuration file contains malformed JSON or is corrupt.')
-            logger.log('Generating a new configuration file.')
+            logger.log('Le fichier de configuration contient un JSON mal formé ou est corrompu.')
+            logger.log('Généreration du nouveau fichier de configuration.')
             fs.ensureDirSync(path.join(configPath, '..'))
             config = DEFAULT_CONFIG
             exports.save()
@@ -155,7 +155,7 @@ exports.load = function(){
             exports.save()
         }
     }
-    logger.log('Successfully Loaded')
+    logger.log('Chargé avec succès')
 }
 
 /**
@@ -206,7 +206,7 @@ exports.isFirstLaunch = function(){
  * @returns {string} The name of the folder.
  */
 exports.getTempNativeFolder = function(){
-    return 'WCNatives'
+    return 'ADLC-Natives'
 }
 
 // System Settings (Unconfigurable on UI)

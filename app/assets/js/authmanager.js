@@ -37,7 +37,7 @@ exports.addAccount = async function(username, password){
             ConfigManager.save()
             return ret
         } else {
-            throw new Error('NotPaidAccount')
+            throw new Error('Compte non payé')
         }
         
     } catch (err){
@@ -83,11 +83,11 @@ exports.validateSelected = async function(){
             ConfigManager.updateAuthAccount(current.uuid, session.accessToken)
             ConfigManager.save()
         } catch(err) {
-            logger.debug('Error while validating selected profile:', err)
+            logger.debug('Erreur lors de la validation du profil sélectionné:', err)
             if(err && err.error === 'ForbiddenOperationException'){
                 // What do we do?
             }
-            logger.log('Account access token is invalid.')
+            logger.log('Le token du compte est invalide.')
             return false
         }
         loggerSuccess.log('Account access token validated.')
