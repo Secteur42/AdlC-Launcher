@@ -1,23 +1,23 @@
 {
-  "version": "1.0.0",
-  "rss": "https://minecraft-mojang.webnode.fr/rss/all.xml",
+  "version": "0.1.0",
+  "rss": "https://adlc.org/articles/flux.rss",
   "discord": {
     "clientId": "822860697721241601",
     "smallImageText": "AdlC Network",
-    "smallImageKey": "logo"
+    "smallImageKey": "https://minecraft-mojang.webnode.fr/rss/all.xml"
   },
   "servers": [
     {
       "id": "srv-rp-1.16.5",
-      "name": "Rôleplay (Minecraft 1.16.5)",
+      "name": "Rôleplay - Secteur 42",
       "description": "Serveur rôleplay | Whitelisté (voir discord)",
-      "icon": "https://raw.githubusercontent.com/Secteur42/AdlC-Launcher/main/app/assets/images/logo-rp.png",
+      "icon": null,
       "version": "0.0.6",
       "address": "mc.secteur42.org:25566",
       "minecraftVersion": "1.16.5",
       "discord": {
         "shortId": "Rôleplay",
-        "largeImageText": "Serveur Minecraft de AdlC",
+        "largeImageText": "Serveur Minecraft jeu de rôle de AdlC",
         "largeImageKey": "logo-rp"
       },
       "mainServer": true,
@@ -71,7 +71,7 @@
               "type": "Library",
               "artifact": {
                 "size": 11352644,
-                "MD5": "1909893674071f7db25cd2cfd8c850ee",
+                "MD5": "cee7455b9d3919a8f9d046b3ff4b1b92",
                 "url": "https://lib.secteur42.org/repo/lib/net/minecraft/client/1.16.5-20210115.111550/client-1.16.5-20210115.111550-srg.jar"
               },
               "subModules": []
@@ -412,6 +412,38 @@
             "size": 5924305,
             "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/OptiFine_1.16.5_HD_U_G7.jar",
             "MD5": "9d323219bdebf4e22a1d90f99f839cc0"
+          }
+        },
+        {
+          "id": "dev.tr7zw:transliterationlib:1.0.4@jar",
+          "name": "TRansliterationLib Mod",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 922991,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/TRansliterationLib-1.0.4.jar",
+            "MD5": "59f38e590dc30a6ec438d4ded004dd6d"
+          }
+        },
+        {
+          "id": "options.txt",
+          "name": "options.txt",
+          "type": "File",
+          "artifact": {
+            "size": 2998,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/files/options.txt",
+            "MD5": "cad79df5d1c57f368b99ec0d0dba397f",
+            "path": "options.txt"
+          }
+        },
+        {
+          "id": "servers.dat",
+          "name": "servers.dat",
+          "type": "File",
+          "artifact": {
+            "size": 3367,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/files/servers.dat",
+            "MD5": "d4173500f074034cfdc8be7b5372a8de",
+            "path": "servers.dat"
           }
         }
       ]
