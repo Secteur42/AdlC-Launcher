@@ -11,7 +11,7 @@
       "id": "srv-rp-1.16.5",
       "name": "srv-rp (Minecraft 1.16.5)",
       "description": "srv-rp Running Minecraft 1.16.5 (Forge v36.1.2)",
-      "icon": null,
+      "icon": "https://raw.githubusercontent.com/Secteur42/AdlC-Launcher/main/app/assets/images/logo-rp.png",
       "version": "0.0.6",
       "address": "mc.secteur42.org:25566",
       "minecraftVersion": "1.16.5",
