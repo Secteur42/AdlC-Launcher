@@ -323,9 +323,9 @@ function asyncSystemScan(mcVersion, launchAfter = true){
                 // Show this information to the user.
                 setOverlayContent(
                     'Non compatible<br>Installation de Java trouvé',
-                    'Pour rejoindre WesterosCraft, vous avez besoin de Java 8 64bits. Souhaitez-vous que nous en installions une copie? En installant, vous acceptez <a href="http://www.oracle.com/technetwork/java/javase/terms/license/index.html">L\'accord de licence Oracle\'s</a>.',
-                    'Install Java',
-                    'Install Manually'
+                    'Pour rejoindre nos serveurs, vous avez besoin de Java 8 64bits. Souhaitez-vous que nous en installions une copie? En installant, vous acceptez <a href="http://www.oracle.com/technetwork/java/javase/terms/license/index.html">L\'accord de licence Oracle\'s</a>.',
+                    'Installer Java',
+                    'Installer Manuellement'
                 )
                 setOverlayHandler(() => {
                     setLaunchDetails('Preparing Java Download..')
@@ -862,7 +862,7 @@ let newsLoadingListener = null
  */
 function setNewsLoading(val){
     if(val){
-        const nLStr = 'Checking for News'
+        const nLStr = 'Vérification des actualités'
         let dotStr = '..'
         nELoadSpan.innerHTML = nLStr + dotStr
         newsLoadingListener = setInterval(() => {

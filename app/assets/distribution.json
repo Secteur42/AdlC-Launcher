@@ -5,13 +5,13 @@
         "smallImageText": "AdlC Network",
         "smallImageKey": "logo"
     },
-    "rss": "https://augure-de-la-chouette.org/articles/index.rss",
+    "rss": "https://minecraft-mojang.webnode.fr/rss/all.xml",
     "servers": [
         {
             "id": "srv-rp",
             "name": "Secteur 42 - Rôleplay (non fonctionelle)",
             "description": "Serveur rôleplay whitelisté, voir discord.",
-            "icon": "https://lib.secteur42.org/dl/f/logo-rp.png",
+            "icon": "https://raw.githubusercontent.com/Secteur42/AdlC-Launcher/main/app/assets/images/logo-rp.png",
             "version": "0.0.6",
             "address": "mc.secteur42.org:25566",
             "minecraftVersion": "1.16.5",
@@ -29,7 +29,7 @@
             "id": "srv-multi",
             "name": "AdlC - Serveur mini-jeux",
             "description": "Serveur mini-jeux publique",
-            "icon": "https://lib.secteur42.org/dl/f/logo-rp.png",
+            "icon": "https://raw.githubusercontent.com/Secteur42/AdlC-Launcher/main/app/assets/images/logo-multi.png",
             "version": "0.0.1",
             "address": "mc.secteur42.org:25566",
             "minecraftVersion": "1.16.5",
