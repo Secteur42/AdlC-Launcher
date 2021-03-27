@@ -1,17 +1,17 @@
 {
   "version": "0.1.0",
-  "rss": "https://adlc.org/articles/flux.rss",
+  "rss": "https://www.rom-game.fr/rss/rss.rss",
   "discord": {
     "clientId": "822860697721241601",
     "smallImageText": "AdlC Network",
-    "smallImageKey": "https://minecraft-mojang.webnode.fr/rss/all.xml"
+    "smallImageKey": "logo"
   },
   "servers": [
     {
       "id": "srv-rp-1.16.5",
       "name": "Rôleplay - Secteur 42",
       "description": "Serveur rôleplay | Whitelisté (voir discord)",
-      "icon": null,
+      "icon": "https://raw.githubusercontent.com/Secteur42/AdlC-Launcher/main/app/assets/images/logo-rp.png",
       "version": "0.0.6",
       "address": "mc.secteur42.org:25566",
       "minecraftVersion": "1.16.5",
