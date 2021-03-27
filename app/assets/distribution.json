@@ -376,6 +376,9 @@
             "size": 42647,
             "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/LoadingScreens-1.12.2-0.3.1.jar",
             "MD5": "d927f95a05529a05ab30acb339e72b20"
+          },
+          "required": {
+            "value": false
           }
         },
         {
