@@ -422,6 +422,9 @@
             "size": 922991,
             "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/TRansliterationLib-1.0.4.jar",
             "MD5": "59f38e590dc30a6ec438d4ded004dd6d"
+          },
+          "required": {
+            "value": false
           }
         },
         {
