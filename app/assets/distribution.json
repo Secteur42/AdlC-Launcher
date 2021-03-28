@@ -415,6 +415,9 @@
             "size": 5924305,
             "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/OptiFine_1.16.5_HD_U_G7.jar",
             "MD5": "9d323219bdebf4e22a1d90f99f839cc0"
+          },
+          "required": {
+            "value": false
           }
         },
         {
@@ -428,17 +431,6 @@
           },
           "required": {
             "value": false
-          }
-        },
-        {
-          "id": "options.txt",
-          "name": "options.txt",
-          "type": "File",
-          "artifact": {
-            "size": 2998,
-            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/files/options.txt",
-            "MD5": "cad79df5d1c57f368b99ec0d0dba397f",
-            "path": "options.txt"
           }
         },
         {
