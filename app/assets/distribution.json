@@ -4,15 +4,15 @@
   "discord": {
     "clientId": "822860697721241601",
     "smallImageText": "AdlC Network",
-    "smallImageKey": "https://minecraft-mojang.webnode.fr/rss/all.xml"
+    "smallImageKey": "logo"
   },
   "servers": [
     {
       "id": "srv-rp-1.16.5",
       "name": "Secteur 42 - RP",
       "description": "Serveur jeu de rôle, whitelisté (voir discord)",
-      "icon": "https://lib.secteur42.org/dl/f/logo-rp.png",
-      "version": "0.1",
+      "icon": "https://raw.githubusercontent.com/Secteur42/AdlC-Launcher/main/app/assets/images/logo-rp.png",
+      "version": "0.0.9",
       "address": "mc.secteur42.org:25565",
       "minecraftVersion": "1.16.5",
       "discord": {
@@ -24,44 +24,44 @@
       "autoconnect": true,
       "modules": [
         {
-          "id": "net.minecraftforge:forge:1.16.5-36.1.2",
+          "id": "net.minecraftforge:forge:1.16.5-36.1.4",
           "name": "Minecraft Forge (base jar)",
           "type": "ForgeHosted",
           "artifact": {
             "size": 210279,
-            "MD5": "82ee731619d09acab72fa2bd30c35dfb",
-            "url": "https://lib.secteur42.org/repo/lib/net/minecraftforge/forge/1.16.5-36.1.2/forge-1.16.5-36.1.2.jar"
+            "MD5": "eac7839e75c5a682239196e8883f6dfc",
+            "url": "https://lib.secteur42.org/repo/lib/net/minecraftforge/forge/1.16.5-36.1.4/forge-1.16.5-36.1.4.jar"
           },
           "subModules": [
             {
-              "id": "1.16.5-36.1.2",
+              "id": "1.16.5-36.1.4",
               "name": "Minecraft Forge (version.json)",
               "type": "VersionManifest",
               "artifact": {
                 "size": 12893,
-                "MD5": "f7f3ca42c37ac0323b838d68bb16ae6e",
-                "url": "https://lib.secteur42.org/repo/versions/1.16.5-forge-36.1.2/1.16.5-forge-36.1.2.json"
+                "MD5": "fe4f33ff2a9ad9c28df500353b267f39",
+                "url": "https://lib.secteur42.org/repo/versions/1.16.5-forge-36.1.4/1.16.5-forge-36.1.4.json"
               }
             },
             {
-              "id": "net.minecraftforge:forge:1.16.5-36.1.2:universal",
+              "id": "net.minecraftforge:forge:1.16.5-36.1.4:universal",
               "name": "Minecraft Forge (universal jar)",
               "type": "Library",
               "artifact": {
-                "size": 2409891,
-                "MD5": "d1d378fb5f4a41f66cb402fadcfc6eb3",
-                "url": "https://lib.secteur42.org/repo/lib/net/minecraftforge/forge/1.16.5-36.1.2/forge-1.16.5-36.1.2-universal.jar"
+                "size": 2416290,
+                "MD5": "db3d62c65346848c0c681964e524cc4e",
+                "url": "https://lib.secteur42.org/repo/lib/net/minecraftforge/forge/1.16.5-36.1.4/forge-1.16.5-36.1.4-universal.jar"
               },
               "subModules": []
             },
             {
-              "id": "net.minecraftforge:forge:1.16.5-36.1.2:client",
+              "id": "net.minecraftforge:forge:1.16.5-36.1.4:client",
               "name": "Minecraft Forge (client jar)",
               "type": "Library",
               "artifact": {
-                "size": 4134974,
-                "MD5": "0a9a9d5057f49e6122ee4045d08c2dd0",
-                "url": "https://lib.secteur42.org/repo/lib/net/minecraftforge/forge/1.16.5-36.1.2/forge-1.16.5-36.1.2-client.jar"
+                "size": 4144758,
+                "MD5": "1aa5582381ec6f5fe3ff00862997d5e0",
+                "url": "https://lib.secteur42.org/repo/lib/net/minecraftforge/forge/1.16.5-36.1.4/forge-1.16.5-36.1.4-client.jar"
               },
               "subModules": []
             },
@@ -71,7 +71,7 @@
               "type": "Library",
               "artifact": {
                 "size": 11352644,
-                "MD5": "8b2d69b4d98f8b7e4e1f4e9243d61a9f",
+                "MD5": "a73d2afeb7f0de0119ad794aeb2130ea",
                 "url": "https://lib.secteur42.org/repo/lib/net/minecraft/client/1.16.5-20210115.111550/client-1.16.5-20210115.111550-srg.jar"
               },
               "subModules": []
@@ -159,13 +159,13 @@
               }
             },
             {
-              "id": "cpw.mods:grossjava9hacks:1.3.0",
+              "id": "cpw.mods:grossjava9hacks:1.3.3",
               "name": "Minecraft Forge (grossjava9hacks)",
               "type": "Library",
               "artifact": {
-                "size": 1921,
-                "MD5": "c5c05d52fcef5479e0ea069f30c6ceb5",
-                "url": "https://lib.secteur42.org/repo/lib/cpw/mods/grossjava9hacks/1.3.0/grossjava9hacks-1.3.0.jar"
+                "size": 2113,
+                "MD5": "d19b487241008d8e6111137a289ea1d7",
+                "url": "https://lib.secteur42.org/repo/lib/cpw/mods/grossjava9hacks/1.3.3/grossjava9hacks-1.3.3.jar"
               }
             },
             {
@@ -341,6 +341,16 @@
           ]
         },
         {
+          "id": "me.shedaniel:architectury:1.10.139@jar",
+          "name": "Architectury",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 304643,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/architectury-1.10.139-forge.jar",
+            "MD5": "3f5c795a7bd1c2ab177c21c640061a57"
+          }
+        },
+        {
           "id": "me.treyruffy.betterf3:betterf3forge:1.1.2@jar",
           "name": "BetterF3 Forge",
           "type": "ForgeMod",
@@ -348,6 +358,16 @@
             "size": 343783,
             "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/BetterF3-1.1.2-forge-1.16.4.jar",
             "MD5": "b4c08e078fab7bc515cc8d8afe2964c6"
+          }
+        },
+        {
+          "id": "me.shedaniel.clothconfig:cloth-config:4.11.15@jar",
+          "name": "Cloth Config v4 API",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 1338439,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/cloth-config-4.11.15-forge.jar",
+            "MD5": "747c471a164fa49cb9a4229daa7fa3d5"
           }
         },
         {
@@ -388,20 +408,6 @@
           }
         },
         {
-          "id": "generated.forgemod:illuminations:1.4.9@jar",
-          "name": "Illuminations",
-          "type": "ForgeMod",
-          "artifact": {
-            "size": 568567,
-            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/optionaloff/illuminations-1.4.9.jar",
-            "MD5": "c21a587c589b56dfa79c7cc41c4ff685"
-          },
-          "required": {
-            "value": false,
-            "def": false
-          }
-        },
-        {
           "id": "rikka.lanserverproperties:lanserverproperties:1.4@jar",
           "name": "Lan Server Properties",
           "type": "ForgeMod",
@@ -422,16 +428,6 @@
           },
           "required": {
             "value": false
-          }
-        },
-        {
-          "id": "yalter.mousetweaks:mousetweaks:2.14@jar",
-          "name": "Mouse Tweaks",
-          "type": "ForgeMod",
-          "artifact": {
-            "size": 58249,
-            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/MouseTweaks-2.14-mc1.16.2.jar",
-            "MD5": "3b4e04a9a79094149306457c7db838d5"
           }
         },
         {
@@ -544,6 +540,16 @@
             "size": 922991,
             "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/TRansliterationLib-1.0.4.jar",
             "MD5": "59f38e590dc30a6ec438d4ded004dd6d"
+          }
+        },
+        {
+          "id": "info.u_team.u_team_core:uteamcore:3.2.0.194@jar",
+          "name": "U Team Core",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 396258,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/u_team_core-1.16.5-3.2.0.194.jar",
+            "MD5": "cac6982fada083dd8da059f560552c9b"
           }
         },
         {
