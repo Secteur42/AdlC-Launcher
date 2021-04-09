@@ -444,16 +444,6 @@
           }
         },
         {
-          "id": "fudge.notenoughcrashes:notenoughcrashes:3.2.0@jar",
-          "name": "Not Enough Crashes",
-          "type": "ForgeMod",
-          "artifact": {
-            "size": 155799,
-            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/notenoughcrashes-3.2.0-forge.jar",
-            "MD5": "3fe5b05ef673a5f75a4788254d3d6ca9"
-          }
-        },
-        {
           "id": "com.chaosthedude:notes:1.16.5-1.2.3@jar",
           "name": "Notes",
           "type": "ForgeMod",
