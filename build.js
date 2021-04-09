@@ -22,7 +22,7 @@ builder.build({
         appId: 'adlclauncher',
         productName: 'AdlC-Launcher',
         artifactName: '${productName}-setup-${version}.${ext}',
-        copyright: 'Copyright © 2018-2021 Daniel Scalzi & AdlC',
+        copyright: 'Copyright © 2018-2021 Avnyr Tokirawa & AdlC',
         directories: {
             buildResources: 'build',
             output: 'dist'

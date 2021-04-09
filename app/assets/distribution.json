@@ -1,27 +1,27 @@
 {
-  "version": "0.1.0",
-  "rss": "https://www.rom-game.fr/rss/rss.rss",
+  "version": "0.1.1",
+  "rss": "https://adlc.org/articles/flux.rss",
   "discord": {
     "clientId": "822860697721241601",
     "smallImageText": "AdlC Network",
-    "smallImageKey": "logo"
+    "smallImageKey": "https://minecraft-mojang.webnode.fr/rss/all.xml"
   },
   "servers": [
     {
       "id": "srv-rp-1.16.5",
-      "name": "Rôleplay - Secteur 42",
-      "description": "Serveur rôleplay | Whitelisté (voir discord)",
-      "icon": "https://raw.githubusercontent.com/Secteur42/AdlC-Launcher/main/app/assets/images/logo-rp.png",
-      "version": "0.0.6",
+      "name": "Secteur 42 - RP",
+      "description": "Serveur jeu de rôle, whitelisté (voir discord)",
+      "icon": null,
+      "version": "0.0.9",
       "address": "mc.secteur42.org:25566",
       "minecraftVersion": "1.16.5",
       "discord": {
         "shortId": "Rôleplay",
-        "largeImageText": "Serveur Minecraft jeu de rôle de AdlC",
+        "largeImageText": "Serveur Minecraft de AdlC",
         "largeImageKey": "logo-rp"
       },
       "mainServer": true,
-      "autoconnect": false,
+      "autoconnect": true,
       "modules": [
         {
           "id": "net.minecraftforge:forge:1.16.5-36.1.2",
@@ -71,7 +71,7 @@
               "type": "Library",
               "artifact": {
                 "size": 11352644,
-                "MD5": "cee7455b9d3919a8f9d046b3ff4b1b92",
+                "MD5": "8b2d69b4d98f8b7e4e1f4e9243d61a9f",
                 "url": "https://lib.secteur42.org/repo/lib/net/minecraft/client/1.16.5-20210115.111550/client-1.16.5-20210115.111550-srg.jar"
               },
               "subModules": []
@@ -346,8 +346,18 @@
           "type": "ForgeMod",
           "artifact": {
             "size": 343783,
-            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/optionaloff/BetterF3-1.1.2-forge-1.16.4.jar",
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/BetterF3-1.1.2-forge-1.16.4.jar",
             "MD5": "b4c08e078fab7bc515cc8d8afe2964c6"
+          }
+        },
+        {
+          "id": "the_fireplace.commbind:commandkeybindings:1.12.2-7.0.3@jar",
+          "name": "CommandKeybindings",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 10441,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/optionaloff/CommandKeybindings-1.12.2-7.0.3.jar",
+            "MD5": "8e19ac0b60a859a434e3e8befb5b0099"
           },
           "required": {
             "value": false,
@@ -355,13 +365,36 @@
           }
         },
         {
-          "id": "me.ichun.mods:ding:1.3.0@jar",
-          "name": "Ding",
+          "id": "com.creativemd.creativecore:creativecore_v1.10.47_mc1.12.2:0.0.0@jar",
+          "name": "CreativeCore_v1.10.47_mc1.12.2",
           "type": "ForgeMod",
           "artifact": {
-            "size": 10483,
-            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/optionaloff/Ding-1.16.5-1.3.0.jar",
-            "MD5": "e892a46e806a6fcf945bfe4999665b53"
+            "size": 1211292,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/CreativeCore_v1.10.47_mc1.12.2.jar",
+            "MD5": "78974950f6836fe7a55e9846fcfeacfb"
+          }
+        },
+        {
+          "id": "bre2el.fpsreducer:fpsreducer:mc1.16.4-1.18@jar",
+          "name": "FPS Reducer",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 90519,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/optionalon/FpsReducer-mc1.16.4-1.18.jar",
+            "MD5": "02256c27b26a01d6f02d5f1d3ae9d767"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "generated.forgemod:illuminations:1.4.9@jar",
+          "name": "Illuminations",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 568567,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/optionaloff/illuminations-1.4.9.jar",
+            "MD5": "c21a587c589b56dfa79c7cc41c4ff685"
           },
           "required": {
             "value": false,
@@ -369,29 +402,59 @@
           }
         },
         {
-          "id": "com.bloodnbonesgaming.loadingscreens:loadingscreens:1.12.2-0.3.1@jar",
-          "name": "LoadingScreens",
+          "id": "rikka.lanserverproperties:lanserverproperties:1.4@jar",
+          "name": "Lan Server Properties",
           "type": "ForgeMod",
           "artifact": {
-            "size": 42647,
-            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/LoadingScreens-1.12.2-0.3.1.jar",
-            "MD5": "d927f95a05529a05ab30acb339e72b20"
+            "size": 19354,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/lanserverproperties-1.4.jar",
+            "MD5": "623f39f5260dc6be376e934395216c6a"
+          }
+        },
+        {
+          "id": "me.shedaniel:lightoverlay:5.8.0@jar",
+          "name": "Light Overlay",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 92320,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/optionalon/light-overlay-5.8.0.jar",
+            "MD5": "f51c40a7f191fe93859ecae91c8b4763"
           },
           "required": {
             "value": false
           }
         },
         {
-          "id": "dev.tr7zw:notenoughanimations:1.2.2@jar",
-          "name": "NotEnoughAnimations Mod",
+          "id": "yalter.mousetweaks:mousetweaks:2.14@jar",
+          "name": "Mouse Tweaks",
           "type": "ForgeMod",
           "artifact": {
-            "size": 303139,
-            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/optionalon/notenoughanimations-1.2.2.jar",
-            "MD5": "eb8808023be7e892cb2dbab76d99ad67"
+            "size": 58249,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/MouseTweaks-2.14-mc1.16.2.jar",
+            "MD5": "3b4e04a9a79094149306457c7db838d5"
+          }
+        },
+        {
+          "id": "info.u_team.music_player:musicplayer:2.3.1.123@jar",
+          "name": "Music Player",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 11257663,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/optionalon/music_player-1.16.5-2.3.1.123.jar",
+            "MD5": "1defd8310dd56b658c9fbe4495a4af2b"
           },
           "required": {
             "value": false
+          }
+        },
+        {
+          "id": "fudge.notenoughcrashes:notenoughcrashes:3.2.0@jar",
+          "name": "Not Enough Crashes",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 155799,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/notenoughcrashes-3.2.0-forge.jar",
+            "MD5": "3fe5b05ef673a5f75a4788254d3d6ca9"
           }
         },
         {
@@ -415,6 +478,59 @@
             "size": 5924305,
             "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/OptiFine_1.16.5_HD_U_G7.jar",
             "MD5": "9d323219bdebf4e22a1d90f99f839cc0"
+          }
+        },
+        {
+          "id": "com.therandomlabs:randompatches:2.4.4-forge@jar",
+          "name": "RandomPatches",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 423940,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/randompatches-2.4.4-forge.jar",
+            "MD5": "46f910c39ee95a9dc1edf27dad5f1122"
+          }
+        },
+        {
+          "id": "link.infra:screenshotclipboard:1.15.1-1.0.5@jar",
+          "name": "Screenshot to Clipboard",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 11331,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/optionalon/ScreenshotToClipboard-1.15.1-1.0.5.jar",
+            "MD5": "3353515e10270f96318b2fe3c7aaee42"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "io.github.ultimateboomer:smoothboot:1.16.4-1.2.2@jar",
+          "name": "Smooth Boot",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 84744,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/smoothboot-forge-1.16.4-1.2.2.jar",
+            "MD5": "104ca76ce6b18b90fbfa4c58b3bbdfc2"
+          }
+        },
+        {
+          "id": "ichttt.mods:sounddeviceoptions:1.4.2@jar",
+          "name": "Sound Device Options",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 20918,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/sounddeviceoptions-1.4.2.jar",
+            "MD5": "de4a6c0278eeda2e0bb5b9109e6cb133"
+          }
+        },
+        {
+          "id": "com.exidex:swingthroughgrass:1.16.4-1.5.3@jar",
+          "name": "SwingThroughGrass",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 22955,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/optionalon/swingthroughgrass-1.16.4-1.5.3.jar",
+            "MD5": "9243c8da687f013e74585ac2e377a6bc"
           },
           "required": {
             "value": false
@@ -428,9 +544,6 @@
             "size": 922991,
             "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/TRansliterationLib-1.0.4.jar",
             "MD5": "59f38e590dc30a6ec438d4ded004dd6d"
-          },
-          "required": {
-            "value": false
           }
         },
         {
