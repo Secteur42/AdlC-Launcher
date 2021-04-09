@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "rss": "https://adlc.org/articles/flux.rss",
   "discord": {
     "clientId": "822860697721241601",
@@ -11,9 +11,9 @@
       "id": "srv-rp-1.16.5",
       "name": "Secteur 42 - RP",
       "description": "Serveur jeu de rôle, whitelisté (voir discord)",
-      "icon": null,
-      "version": "0.0.9",
-      "address": "mc.secteur42.org:25566",
+      "icon": "https://lib.secteur42.org/dl/f/logo-rp.png",
+      "version": "0.1",
+      "address": "mc.secteur42.org:25565",
       "minecraftVersion": "1.16.5",
       "discord": {
         "shortId": "Rôleplay",

@@ -1,4 +1,4 @@
-import { connect } from 'net'
+const net = require('net')
 
 /**
  * Retrieves the status of a minecraft server.
@@ -8,7 +8,7 @@ import { connect } from 'net'
  * @returns {Promise.<Object>} A promise which resolves to an object containing
  * status information.
  */
-export function getStatus(address, port = 25565){
+exports.getStatus = function(address, port = 25565){
 
     if(port == null || port == ''){
         port = 25565
@@ -18,7 +18,7 @@ export function getStatus(address, port = 25565){
     }
 
     return new Promise((resolve, reject) => {
-        const socket = connect(port, address, () => {
+        const socket = net.connect(port, address, () => {
             let buff = Buffer.from([0xFE, 0x01])
             socket.write(buff)
         })
