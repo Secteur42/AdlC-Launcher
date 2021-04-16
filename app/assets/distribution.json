@@ -1,5 +1,5 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.3",
   "rss": "https://adlc.org/articles/flux.rss",
   "discord": {
     "clientId": "822860697721241601",
@@ -12,7 +12,7 @@
       "name": "Secteur 42 - RP",
       "description": "Serveur jeu de rôle, whitelisté (voir discord)",
       "icon": "https://raw.githubusercontent.com/Secteur42/AdlC-Launcher/main/app/assets/images/logo-rp.png",
-      "version": "0.0.9",
+      "version": "0.0.6",
       "address": "mc.secteur42.org:25565",
       "minecraftVersion": "1.16.5",
       "discord": {
@@ -21,7 +21,7 @@
         "largeImageKey": "logo-rp"
       },
       "mainServer": true,
-      "autoconnect": true,
+      "autoconnect": false,
       "modules": [
         {
           "id": "net.minecraftforge:forge:1.16.5-36.1.4",
@@ -71,7 +71,7 @@
               "type": "Library",
               "artifact": {
                 "size": 11352644,
-                "MD5": "a73d2afeb7f0de0119ad794aeb2130ea",
+                "MD5": "01e96959f0052e72d6f53c4cfc73b98c",
                 "url": "https://lib.secteur42.org/repo/lib/net/minecraft/client/1.16.5-20210115.111550/client-1.16.5-20210115.111550-srg.jar"
               },
               "subModules": []
@@ -385,13 +385,13 @@
           }
         },
         {
-          "id": "com.creativemd.creativecore:creativecore_v1.10.47_mc1.12.2:0.0.0@jar",
-          "name": "CreativeCore_v1.10.47_mc1.12.2",
+          "id": "team.creative:creativecore:2.0.0@jar",
+          "name": "CreativeCore",
           "type": "ForgeMod",
           "artifact": {
-            "size": 1211292,
-            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/CreativeCore_v1.10.47_mc1.12.2.jar",
-            "MD5": "78974950f6836fe7a55e9846fcfeacfb"
+            "size": 406463,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/CreativeCore_v2.1.0_mc1.16.5.jar",
+            "MD5": "44c32be2c9cfb154d02a0678f3a2c07d"
           }
         },
         {
@@ -462,8 +462,11 @@
           "type": "ForgeMod",
           "artifact": {
             "size": 5924305,
-            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/OptiFine_1.16.5_HD_U_G7.jar",
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/optionalon/OptiFine_1.16.5_HD_U_G7.jar",
             "MD5": "9d323219bdebf4e22a1d90f99f839cc0"
+          },
+          "required": {
+            "value": false
           }
         },
         {
@@ -540,6 +543,28 @@
             "size": 396258,
             "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/u_team_core-1.16.5-3.2.0.194.jar",
             "MD5": "cac6982fada083dd8da059f560552c9b"
+          }
+        },
+        {
+          "id": "BetterVanillaBuildingLeavesV8.zip",
+          "name": "BetterVanillaBuildingLeavesV8.zip",
+          "type": "File",
+          "artifact": {
+            "size": 71936,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/files/resourcepacks/BetterVanillaBuildingLeavesV8.zip",
+            "MD5": "d7dfc97c2e4ba211cdea38e7b4604e3c",
+            "path": "resourcepacks/BetterVanillaBuildingLeavesV8.zip"
+          }
+        },
+        {
+          "id": "bettervanillabuildingV2.48.zip",
+          "name": "bettervanillabuildingV2.48.zip",
+          "type": "File",
+          "artifact": {
+            "size": 3495483,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/files/resourcepacks/bettervanillabuildingV2.48.zip",
+            "MD5": "619a02c08dccbc2a048e981ce6fb7127",
+            "path": "resourcepacks/bettervanillabuildingV2.48.zip"
           }
         },
         {
