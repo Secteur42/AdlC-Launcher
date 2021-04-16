@@ -71,7 +71,7 @@
               "type": "Library",
               "artifact": {
                 "size": 11352644,
-                "MD5": "01e96959f0052e72d6f53c4cfc73b98c",
+                "MD5": "bf5d04daaed8f905e6a99e3e6fe7de74",
                 "url": "https://lib.secteur42.org/repo/lib/net/minecraft/client/1.16.5-20210115.111550/client-1.16.5-20210115.111550-srg.jar"
               },
               "subModules": []
@@ -457,16 +457,13 @@
           }
         },
         {
-          "id": "net.optifine:optifine:1.16.5_HD_U_G7@jar",
+          "id": "net.optifine:optifine:1.16.5_HD_U_G8_pre12@jar",
           "name": "OptiFine",
           "type": "ForgeMod",
           "artifact": {
-            "size": 5924305,
-            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/optionalon/OptiFine_1.16.5_HD_U_G7.jar",
-            "MD5": "9d323219bdebf4e22a1d90f99f839cc0"
-          },
-          "required": {
-            "value": false
+            "size": 6045369,
+            "url": "https://lib.secteur42.org/servers/srv-rp-1.16.5/forgemods/required/preview_OptiFine_1.16.5_HD_U_G8_pre12.jar",
+            "MD5": "cea8dde33eab0f62cada6d2d589cc37d"
           }
         },
         {
