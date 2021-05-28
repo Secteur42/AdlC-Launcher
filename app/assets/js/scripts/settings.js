@@ -337,7 +337,7 @@ function bindAuthAccountSelect(){
             for(let i=0; i<selectBtns.length; i++){
                 if(selectBtns[i].hasAttribute('selected')){
                     selectBtns[i].removeAttribute('selected')
-                    selectBtns[i].innerHTML = 'Select Account'
+                    selectBtns[i].innerHTML = 'Sélectionnez le compte'
                 }
             }
             val.setAttribute('selected', '')
@@ -1146,7 +1146,7 @@ function populateJavaExecDetails(execPath){
                 settingsJavaExecDetails.innerHTML = `Sélectionné: Java ${v.version.major}.${v.version.minor}.${v.version.revision} (x${v.arch})${vendor}`
             }
         } else {
-            settingsJavaExecDetails.innerHTML = 'Sélection invalide'
+            settingsJavaExecDetails.innerHTML = 'Sélection invalide !'
         }
     })
 }

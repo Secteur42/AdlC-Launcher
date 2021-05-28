@@ -40,7 +40,7 @@ class ProcessBuilder {
         const tempNativePath = path.join(os.tmpdir(), ConfigManager.getTempNativeFolder(), crypto.pseudoRandomBytes(16).toString('hex'))
         process.throwDeprecation = true
         this.setupLiteLoader()
-        logger.log('Using liteloader:', this.usingLiteLoader)
+        logger.log('Utilisation du liteloader:', this.usingLiteLoader)
         const modObj = this.resolveModConfiguration(ConfigManager.getModConfiguration(this.server.getID()).mods, this.server.getModules())
         
         // Mod list below 1.13
@@ -59,7 +59,7 @@ class ProcessBuilder {
             args = args.concat(this.constructModList(modObj.fMods))
         }
 
-        logger.log('Launch Arguments:', args)
+        logger.log('Arguments de lancement:', args)
 
         const child = child_process.spawn(ConfigManager.getJavaExecutable(), args, {
             cwd: this.gameDir,
@@ -86,9 +86,9 @@ class ProcessBuilder {
             logger.log('Exited with code', code)
             fs.remove(tempNativePath, (err) => {
                 if(err){
-                    logger.warn('Error while deleting temp dir', err)
+                    logger.warn('Erreur lors de la suppression d'un répertoire temporaire', err)
                 } else {
-                    logger.log('Temp dir deleted successfully.')
+                    logger.log('Temp dir supprimé avec succès.')
                 }
             })
         })
@@ -505,13 +505,13 @@ class ProcessBuilder {
             isAutoconnectBroken = Util.isAutoconnectBroken(this.forgeData.id.split('-')[2])
         } catch(err) {
             logger.error(err)
-            logger.error('Forge version format changed.. assuming autoconnect works.')
+            logger.error('Le format de la version de Forge a changé... en supposant que la connexion automatique fonctionne.')
             logger.debug('Forge version:', this.forgeData.id)
         }
 
         if(isAutoconnectBroken) {
-            logger.error('Server autoconnect disabled on Forge 1.15.2 for builds earlier than 31.2.15 due to OpenGL Stack Overflow issue.')
-            logger.error('Please upgrade your Forge version to at least 31.2.15!')
+            logger.error('La connexion automatique au serveur est désactivée dans Forge 1.15.2 pour les versions antérieures à la 31.2.15 en raison d\'un problème de débordement de pile OpenGL.')
+            logger.error('Veuillez mettre à jour votre version de Forge à au moins 31.2.15 !')
         } else {
             this._processAutoConnectArg(args)
         }
@@ -723,7 +723,7 @@ class ProcessBuilder {
                         if(!shouldExclude){
                             fs.writeFile(path.join(tempNativePath, fileName), zipEntries[i].getData(), (err) => {
                                 if(err){
-                                    logger.error('Error while extracting native library:', err)
+                                    logger.error('Erreur lors de l\'extraction de la bibliothèque native :', err)
                                 }
                             })
                         }

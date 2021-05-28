@@ -22,14 +22,14 @@ process.traceDeprecation = true
 // Disable eval function.
 // eslint-disable-next-line
 window.eval = global.eval = function () {
-    throw new Error('Sorry, this app does not support window.eval().')
+    throw new Error('Désolé, cette application ne prend pas en charge window.eval().')
 }
 
 // Display warning when devtools window is opened.
 remote.getCurrentWebContents().on('devtools-opened', () => {
     console.log('%cLa console est rempli de terreur et de difficulté !.', 'color: white; -webkit-text-stroke: 4px #a02d2a; font-size: 60px; font-weight: bold')
-    console.log('%cIf you\'ve been told to paste something here, you\'re being scammed.', 'font-size: 16px')
-    console.log('%cUnless you know exactly what you\'re doing, close this window.', 'font-size: 16px')
+    console.log('%cSi on vous a dit de coller quelque chose ici, vous vous faites arnaquer !', 'font-size: 16px')
+    console.log('%cÀ moins que vous ne sachiez exactement ce que vous faites, fermez cette fenêtre.', 'font-size: 16px')
 })
 
 // Disable zoom, needed for darwin.
@@ -42,11 +42,11 @@ if(!isDev){
     ipcRenderer.on('autoUpdateNotification', (event, arg, info) => {
         switch(arg){
             case 'checking-for-update':
-                loggerAutoUpdater.log('Checking for update..')
-                settingsUpdateButtonStatus('Checking for Updates..', true)
+                loggerAutoUpdater.log('Vérification des mises à jour..')
+                settingsUpdateButtonStatus('Vérification des mises à jour..', true)
                 break
             case 'update-available':
-                loggerAutoUpdaterSuccess.log('New update available', info.version)
+                loggerAutoUpdaterSuccess.log('Nouvelle mise à jour disponible', info.version)
                 
                 if(process.platform === 'darwin'){
                     info.darwindownload = `https://github.com/Secteur42/AdlC-Launcher/releases/download/v${info.version}/AdlC-Launcher-setup-${info.version}.dmg`
@@ -56,8 +56,8 @@ if(!isDev){
                 populateSettingsUpdateInformation(info)
                 break
             case 'update-downloaded':
-                loggerAutoUpdaterSuccess.log('Update ' + info.version + ' ready to be installed.')
-                settingsUpdateButtonStatus('Install Now', false, () => {
+                loggerAutoUpdaterSuccess.log('Update ' + info.version + ' prête à être installée.')
+                settingsUpdateButtonStatus('Installer maintenant', false, () => {
                     if(!isDev){
                         ipcRenderer.send('autoUpdateAction', 'installUpdateNow')
                     }
@@ -65,8 +65,8 @@ if(!isDev){
                 showUpdateUI(info)
                 break
             case 'update-not-available':
-                loggerAutoUpdater.log('No new update found.')
-                settingsUpdateButtonStatus('Check for Updates')
+                loggerAutoUpdater.log('Aucune nouvelle mise à jour trouvée.')
+                settingsUpdateButtonStatus('Vérification des mises à jour')
                 break
             case 'ready':
                 updateCheckListener = setInterval(() => {
@@ -77,11 +77,11 @@ if(!isDev){
             case 'realerror':
                 if(info != null && info.code != null){
                     if(info.code === 'ERR_UPDATER_INVALID_RELEASE_FEED'){
-                        loggerAutoUpdater.log('No suitable releases found.')
+                        loggerAutoUpdater.log('Aucune version appropriée n\'a été trouvée.')
                     } else if(info.code === 'ERR_XML_MISSED_ELEMENT'){
-                        loggerAutoUpdater.log('No releases found.')
+                        loggerAutoUpdater.log('Aucun communiqué n\'a été trouvé.')
                     } else {
-                        loggerAutoUpdater.error('Error during update check..', info)
+                        loggerAutoUpdater.error('Erreur pendant la vérification de la mise à jour..', info)
                         loggerAutoUpdater.debug('Error Code:', info.code)
                     }
                 }

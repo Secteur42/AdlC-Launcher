@@ -11,7 +11,7 @@ exports.initRPC = function(genSettings, servSettings, initialDetails = 'En atten
 
     activity = {
         details: initialDetails,
-        state: 'Server: ' + servSettings.shortId,
+        state: 'Utilise: ' + servSettings.shortId,
         largeImageKey: servSettings.largeImageKey,
         largeImageText: servSettings.largeImageText,
         smallImageKey: genSettings.smallImageKey,
@@ -27,9 +27,9 @@ exports.initRPC = function(genSettings, servSettings, initialDetails = 'En atten
     
     client.login({clientId: genSettings.clientId}).catch(error => {
         if(error.message.includes('ENOENT')) {
-            logger.log('Unable to initialize Discord Rich Presence, no client detected.')
+            logger.log('Impossible d\'initialiser Discord Rich Presence, aucun client n\'a été détecté.')
         } else {
-            logger.log('Unable to initialize Discord Rich Presence: ' + error.message, error)
+            logger.log('Impossible d\'initialiser Discord Rich Presence : ' + error.message, error)
         }
     })
 }

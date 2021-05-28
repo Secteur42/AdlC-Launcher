@@ -1219,7 +1219,7 @@ class AssetGuard extends EventEmitter {
             if(!fs.existsSync(versionFile) || force){
                 const url = await self._getVersionDataUrl(version)
                 //This download will never be tracked as it's essential and trivial.
-                console.log('Preparing download of ' + version + ' assets.')
+                console.log('Préparation du téléchargement des données de la ' + version )
                 fs.ensureDirSync(versionPath)
                 const stream = request(url).pipe(fs.createWriteStream(versionFile))
                 stream.on('finish', () => {
@@ -1301,7 +1301,7 @@ class AssetGuard extends EventEmitter {
 
             let data = null
             if(!fs.existsSync(assetIndexLoc) || force){
-                console.log('Downloading ' + versionData.id + ' asset index.')
+                console.log('Téléchargement de ' + versionData.id + ' indice des actifs.')
                 fs.ensureDirSync(indexPath)
                 const stream = request(assetIndex.url).pipe(fs.createWriteStream(assetIndexLoc))
                 stream.on('finish', () => {
@@ -1539,7 +1539,7 @@ class AssetGuard extends EventEmitter {
                                 return
                             }
                         }
-                        reject('No forge version manifest found!')
+                        reject('Aucun manifeste de version forgée trouvé !')
                         return
                     } else {
                         let obArtifact = ob.getArtifact()
@@ -1555,7 +1555,7 @@ class AssetGuard extends EventEmitter {
                     }
                 }
             }
-            reject('No forge module found!')
+            reject('Aucun module de forge trouvé !')
         })
     }
 
