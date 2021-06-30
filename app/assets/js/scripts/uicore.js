@@ -135,7 +135,7 @@ $(function(){
 
 document.addEventListener('readystatechange', function () {
     if (document.readyState === 'interactive'){
-        loggerUICore.log('UICore Initializing..')
+        loggerUICore.log('UICore Initialisation..')
 
         // Bind close button.
         Array.from(document.getElementsByClassName('fCb')).map((val) => {

@@ -140,7 +140,7 @@ function createMenu() {
         let applicationSubMenu = {
             label: 'Application',
             submenu: [{
-                label: 'About Application',
+                label: 'À propos de l\'application',
                 selector: 'orderFrontStandardAboutPanel:'
             }, {
                 type: 'separator'

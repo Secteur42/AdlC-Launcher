@@ -86,7 +86,7 @@ class ProcessBuilder {
             logger.log('Exited with code', code)
             fs.remove(tempNativePath, (err) => {
                 if(err){
-                    logger.warn('Erreur lors de la suppression d'un répertoire temporaire', err)
+                    logger.warn('Erreur lors de la suppression d\'un répertoire temporaire', err)
                 } else {
                     logger.log('Temp dir supprimé avec succès.')
                 }

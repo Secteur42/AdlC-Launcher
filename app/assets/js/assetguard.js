@@ -190,7 +190,7 @@ class Util {
             return false
 
         } catch(err) {
-            throw new Error('Forge version is complex (changed).. launcher requires a patch.')
+            throw new Error('La version de la forge est complexe (modifiée). Le lanceur nécessite un patch.')
         }
     }
 
@@ -502,7 +502,7 @@ class JavaGuard extends EventEmitter {
                 } else {
                     // Java 9+
                     if(Util.mcVersionAtLeast('1.13', this.mcVersion)){
-                        console.log('Java 9+ not yet tested.')
+                        console.log('Java 9+ non encore testé.')
                         /* meta.version = verOb
                         ++checksum
                         if(checksum === goal){
@@ -1130,7 +1130,7 @@ class AssetGuard extends EventEmitter {
      * @returns {Promise.<void>} An empty promise to indicate the extraction has completed.
      */
     static _extractPackXZ(filePaths, javaExecutable){
-        console.log('[PackXZExtract] Starting')
+        console.log('[PackXZExtract] Démarrage')
         return new Promise((resolve, reject) => {
 
             let libPath
@@ -1153,7 +1153,7 @@ class AssetGuard extends EventEmitter {
                 console.log('[PackXZExtract]', data.toString('utf8'))
             })
             child.on('close', (code, signal) => {
-                console.log('[PackXZExtract]', 'Exited with code', code)
+                console.log('[PackXZExtract]', 'Sorti avec le code', code)
                 resolve()
             })
         })
@@ -1192,7 +1192,7 @@ class AssetGuard extends EventEmitter {
                     }
                 }
                 //We didn't find forge's version.json.
-                reject('Unable to finalize Forge processing, version.json not found! Has forge changed their format?')
+                reject('Impossible de finaliser le traitement de Forge, version.json non trouvée ! Forge a-t-il changé de format ?')
             })
         })
     }
@@ -1776,7 +1776,7 @@ class AssetGuard extends EventEmitter {
                         const contentLength = parseInt(resp.headers['content-length'])
 
                         if(contentLength !== asset.size){
-                            console.log(`WARN: Got ${contentLength} bytes for ${asset.id}: Expected ${asset.size}`)
+                            console.log(`WARN: Obtenu ${contentLength} octets pour ${asset.id}: Attendu ${asset.size}`)
                             doHashCheck = true
 
                             // Adjust download
@@ -1793,9 +1793,9 @@ class AssetGuard extends EventEmitter {
                             if(doHashCheck){
                                 const v = AssetGuard._validateLocal(asset.to, asset.type != null ? 'md5' : 'sha1', asset.hash)
                                 if(v){
-                                    console.log(`Hashes match for ${asset.id}, byte mismatch is an issue in the distro index.`)
+                                    console.log(`Les hachages correspondent à ${asset.id}, La non-concordance des octets est un problème dans l'index de la distro.`)
                                 } else {
-                                    console.error(`Hashes do not match, ${asset.id} may be corrupted.`)
+                                    console.error(`Les hachages ne correspondent pas, ${asset.id} peuvent être corrompus.`)
                                 }
                             }
 
@@ -1807,7 +1807,7 @@ class AssetGuard extends EventEmitter {
                     } else {
 
                         req.abort()
-                        console.log(`Failed to download ${asset.id}(${typeof asset.from === 'object' ? asset.from.url : asset.from}). Response code ${resp.statusCode}`)
+                        console.log(`Échec du téléchargement de ${asset.id}(${typeof asset.from === 'object' ? asset.from.url : asset.from}). Retour avec code : ${resp.statusCode}`)
                         self.progress += asset.size*1
                         self.emit('progress', 'download', self.progress, self.totaldlsize)
                         cb()

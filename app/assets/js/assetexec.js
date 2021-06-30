@@ -1,13 +1,13 @@
 let target = require('./assetguard')[process.argv[2]]
 if(target == null){
-    process.send({context: 'error', data: null, error: 'Invalid class name'})
-    console.error('Invalid class name passed to argv[2], cannot continue.')
+    process.send({context: 'error', data: null, error: 'Nom de classe invalide'})
+    console.error('Nom de classe non valide passé à argv[2], ne peut pas continuer.')
     process.exit(1)
 }
 let tracker = new target(...(process.argv.splice(3)))
 
 //const tracker = new AssetGuard(process.argv[2], process.argv[3])
-console.log('AssetExec Started')
+console.log('AssetExec Démarré')
 
 // Temporary for debug purposes.
 process.on('unhandledRejection', r => console.log(r))
@@ -52,12 +52,12 @@ process.on('message', (msg) => {
                 process.send({result: res, context: func})
             }
         } else {
-            process.send({context: 'error', data: null, error: `Function ${func} not found on ${process.argv[2]}`})
+            process.send({context: 'error', data: null, error: `Fonction ${func} non trouvé sur ${process.argv[2]}`})
         }
     } else if(msg.task === 'changeContext'){
         target = require('./assetguard')[msg.class]
         if(target == null){
-            process.send({context: 'error', data: null, error: `Invalid class ${msg.class}`})
+            process.send({context: 'error', data: null, error: `Classe invalide ${msg.class}`})
         } else {
             tracker = new target(...(msg.args))
             assignListeners()
@@ -66,6 +66,6 @@ process.on('message', (msg) => {
 })
 
 process.on('disconnect', () => {
-    console.log('AssetExec Disconnected')
+    console.log('AssetExec Déconnecté')
     process.exit(0)
 })
