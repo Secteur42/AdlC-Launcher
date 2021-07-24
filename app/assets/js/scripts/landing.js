@@ -691,7 +691,7 @@ function dlAsync(login = true){
                     data = data.trim()
                     if(data.indexOf('Impossible de trouver ou de charger main class net.minecraft.launchwrapper.Launch') > -1){
                         loggerLaunchSuite.error('Le lancement du jeu a échoué, LaunchWrapper n\'a pas été téléchargé correctement.')
-                        showLaunchFailure('Erreur pendant le lancement', 'Le fichier principal, LaunchWrapper, n\'a pas réussi à se télécharger correctement. En conséquence, le jeu ne peut pas être lancé.<br><br>Pour résoudre ce problème, désactivez temporairement votre logiciel antivirus et lancez à nouveau le jeu.<br><br>Si vous avez le temps, veuillez <a href="https://github.com/Secteur42/AdlC-Launcher/issues">soumettre un problème</a> et nous faire savoir quel logiciel antivirus vous utilisez. Nous les contacterons et tenterons d'arranger les choses.')
+                        showLaunchFailure('Erreur pendant le lancement', 'Le fichier principal, LaunchWrapper, n\'a pas réussi à se télécharger correctement. En conséquence, le jeu ne peut pas être lancé.<br><br>Pour résoudre ce problème, désactivez temporairement votre logiciel antivirus et lancez à nouveau le jeu.<br><br>Si vous avez le temps, veuillez <a href="https://github.com/AdlC-Network/AdlC-Launcher/issues">soumettre un problème</a> et nous faire savoir quel logiciel antivirus vous utilisez. Nous les contacterons et tenterons d\'arranger les choses.')
                     }
                 }
 
