@@ -26,24 +26,24 @@
 
 This is not an exhaustive list. Download and install the launcher to gauge all it can do!
 
-#### Need Help? [Check the wiki.][wiki]
+#### Need Help? [Check the wiki.](https://adlc.network/w/index.php?title=Launcher)
 
 #### Like the project? Leave a ⭐ star on the repository!
 
 ## Downloads
 
-You can download from [GitHub Releases](https://github.com/Secteur42/AdlC-Launcher/releases)
+You can download from [GitHub Releases](https://github.com/AdlC-Network/AdlC-Launcher/releases)
 
 #### Latest Release
 
-[![](https://img.shields.io/github/release/Secteur42/AdlC-Launcher.svg?style=flat-square)](https://github.com/Secteur42/AdlC-Launcher/releases/latest)
+[![](https://img.shields.io/github/release/Secteur42/AdlC-Launcher.svg?style=flat-square)](https://github.com/AdlC-Network/AdlC-Launcher/releases/latest)
 
 #### Latest Pre-Release
-[![](https://img.shields.io/github/release/Secteur42/AdlC-Launcher/all.svg?style=flat-square)](https://github.com/Secteur42/AdlC-Launcher/releases)
+[![](https://img.shields.io/github/release/Secteur42/AdlC-Launcher/all.svg?style=flat-square)](https://github.com/AdlC-Network/AdlC-Launcher/releases)
 
 **Supported Platforms**
 
-If you download from the [Releases](https://github.com/Secteur42/AdlC-Launcher/releases) tab, select the installer for your system.
+If you download from the [Releases](https://github.com/AdlC-Network/AdlC-Launcher/releases) tab, select the installer for your system.
 
 | Platform | File |
 | -------- | ---- |
