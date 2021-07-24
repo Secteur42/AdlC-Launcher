@@ -2,6 +2,7 @@
 
 <h1 align="center">AdlC Launcher</h1>
 
+[![Build/release](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/gen.yml/badge.svg?branch=main)](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/gen.yml)
 <em><h5 align="center">(formerly Electron Launcher)</h5></em>
 
 
