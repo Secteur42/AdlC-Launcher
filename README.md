@@ -2,8 +2,8 @@
 
 <h1 align="center">AdlC Launcher</h1>
 
-<div align="center">[![Build/release](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/gen.yml/badge.svg?branch=main)](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/gen.yml)  [![CodeQL](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/codeql-analysis.yml)</h1>
-<em><h5 align="center">(formerly Electron Launcher)</div></em>
+<div align="center">[![Build/release](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/gen.yml/badge.svg?branch=main)](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/gen.yml)  [![CodeQL](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/codeql-analysis.yml)</div>
+<em><h5 align="center">(formerly Electron Launcher)</h5></em>
 
 
 ## Features
