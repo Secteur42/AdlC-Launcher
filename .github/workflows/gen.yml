@@ -20,7 +20,7 @@ jobs:
           node-version: ">=14"
 
       - name: Construire/publier l'application Electron
-        uses: samuelmeuli/action-electron-builder@v1
+        uses: samuelmeuli/action-electron-builder@v1.6
         with:
           github_token: ${{ secrets.github_token }}
 
