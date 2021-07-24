@@ -1,6 +1,6 @@
 {
   "version": "0.1.4",
-  "rss": "https://adlc.org/articles/flux.rss",
+  "rss": "https://github.com/AdlC-Network/AdlC-Launcher/releases.atom",
   "discord": {
     "clientId": "822860697721241601",
     "smallImageText": "AdlC Network",
