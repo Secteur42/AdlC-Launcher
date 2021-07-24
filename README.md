@@ -1,8 +1,11 @@
 <p align="center"><img src="./app/assets/images/SealCircle.png" width="150px" height="150px" alt="Adlc Network"></p>
 
 <h1 align="center">AdlC Launcher</h1>
-<h1 align="center">FR Launcher</h1>
-[![CodeQL](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/codeql-analysis.yml)  [![Build/release](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/gen.yml/badge.svg)](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/gen.yml)
+<h4 align="center">FR Launcher</h4>
+
+[![CodeQL](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/codeql-analysis.yml)
+[![Build/release](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/gen.yml/badge.svg)](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/gen.yml)
+
 <em><h5 align="center">(à partir du Helion Launcher)</h5></em>
 
 
