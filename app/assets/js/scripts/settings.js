@@ -359,11 +359,10 @@ function bindAuthAccountLogOut(){
             if(Object.keys(ConfigManager.getAuthAccounts()).length === 1){
                 isLastAccount = true
                 setOverlayContent(
-                    'Attention<br>Ceci est votre dernier compte.',
-                    'Pour utiliser le lanceur, vous devez être connecté à au moins un compte. Vous devrez vous reconnecter après.<br><br>Voulez-vous vraiment vous déconnecter ?',
+                    'Attention ceci est votre dernier compte.',
+                    'Pour utiliser le lanceur, vous devez être connecté à au moins un compte. Vous devrez vous reconnecter après. Voulez-vous vraiment vous déconnecter ?',
                     'Accepter',
-                    'Retour'
-                )
+                    'Retour')
                 setOverlayHandler(() => {
                     processLogOut(val, isLastAccount)
                     toggleOverlay(false)
@@ -442,25 +441,25 @@ function populateAuthAccounts(){
 
     authKeys.map((val) => {
         const acc = authAccounts[val]
-        authAccountStr += `<div class="settingsAuthAccount" uuid="${acc.uuid}">
-            <div class="settingsAuthAccountLeft">
-                <img class="settingsAuthAccountImage" alt="${acc.displayName}" src="https://crafatar.com/renders/body/${acc.uuid}?scale=3&default=MHF_Steve&overlay">
+        authAccountStr += `<div class='settingsAuthAccount' uuid='${acc.uuid}'>
+            <div class='settingsAuthAccountLeft'>
+                <img class='settingsAuthAccountImage' alt='${acc.displayName}' src='https://crafatar.com/renders/body/${acc.uuid}?scale=3&default=MHF_Steve&overlay'>
             </div>
-            <div class="settingsAuthAccountRight">
-                <div class="settingsAuthAccountDetails">
-                    <div class="settingsAuthAccountDetailPane">
-                        <div class="settingsAuthAccountDetailTitle">Pseudo</div>
-                        <div class="settingsAuthAccountDetailValue">${acc.displayName}</div>
+            <div class='settingsAuthAccountRight'>
+                <div class='settingsAuthAccountDetails'>
+                    <div class='settingsAuthAccountDetailPane'>
+                        <div class='settingsAuthAccountDetailTitle'>Pseudo</div>
+                        <div class='settingsAuthAccountDetailValue'>${acc.displayName}</div>
                     </div>
-                    <div class="settingsAuthAccountDetailPane">
-                        <div class="settingsAuthAccountDetailTitle">UUID</div>
-                        <div class="settingsAuthAccountDetailValue">${acc.uuid}</div>
+                    <div class='settingsAuthAccountDetailPane'>
+                        <div class='settingsAuthAccountDetailTitle'>UUID</div>
+                        <div class='settingsAuthAccountDetailValue'>${acc.uuid}</div>
                     </div>
                 </div>
-                <div class="settingsAuthAccountActions">
-                    <button class="settingsAuthAccountSelect" ${selectedUUID === acc.uuid ? 'selected>Compte sélectionné &#10004;' : '>Choissir un compte'}</button>
-                    <div class="settingsAuthAccountWrapper">
-                        <button class="settingsAuthAccountLogOut">Déconnexion</button>
+                <div class='settingsAuthAccountActions'>
+                    <button class='settingsAuthAccountSelect' ${selectedUUID === acc.uuid ? 'selected>Compte sélectionné &#10004;' : '>Choissir un compte'}</button>
+                    <div class='settingsAuthAccountWrapper'>
+                        <button class='settingsAuthAccountLogOut'>Déconnexion</button>
                     </div>
                 </div>
             </div>
@@ -536,21 +535,21 @@ function parseModulesForUI(mdls, submodules, servConf){
 
             if(mdl.getRequired().isRequired()){
 
-                reqMods += `<div id="${mdl.getVersionlessID()}" class="settingsBaseMod settings${submodules ? 'Sub' : ''}Mod" enabled>
-                    <div class="settingsModContent">
-                        <div class="settingsModMainWrapper">
-                            <div class="settingsModStatus"></div>
-                            <div class="settingsModDetails">
-                                <span class="settingsModName">${mdl.getName()}</span>
-                                <span class="settingsModVersion">v${mdl.getVersion()}</span>
+                reqMods += `<div id='${mdl.getVersionlessID()}' class='settingsBaseMod settings${submodules ? 'Sub' : ''}Mod' enabled>
+                    <div class='settingsModContent'>
+                        <div class='settingsModMainWrapper'>
+                            <div class='settingsModStatus'></div>
+                            <div class='settingsModDetails'>
+                                <span class='settingsModName'>${mdl.getName()}</span>
+                                <span class='settingsModVersion'>v${mdl.getVersion()}</span>
                             </div>
                         </div>
-                        <label class="toggleSwitch" reqmod>
-                            <input type="checkbox" checked>
-                            <span class="toggleSwitchSlider"></span>
+                        <label class='toggleSwitch' reqmod>
+                            <input type='checkbox' checked>
+                            <span class='toggleSwitchSlider'></span>
                         </label>
                     </div>
-                    ${mdl.hasSubModules() ? `<div class="settingsSubModContainer">
+                    ${mdl.hasSubModules() ? `<div class='settingsSubModContainer'>
                         ${Object.values(parseModulesForUI(mdl.getSubModules(), true, servConf[mdl.getVersionlessID()])).join('')}
                     </div>` : ''}
                 </div>`
@@ -560,21 +559,21 @@ function parseModulesForUI(mdls, submodules, servConf){
                 const conf = servConf[mdl.getVersionlessID()]
                 const val = typeof conf === 'object' ? conf.value : conf
 
-                optMods += `<div id="${mdl.getVersionlessID()}" class="settingsBaseMod settings${submodules ? 'Sub' : ''}Mod" ${val ? 'enabled' : ''}>
-                    <div class="settingsModContent">
-                        <div class="settingsModMainWrapper">
-                            <div class="settingsModStatus"></div>
-                            <div class="settingsModDetails">
-                                <span class="settingsModName">${mdl.getName()}</span>
-                                <span class="settingsModVersion">v${mdl.getVersion()}</span>
+                optMods += `<div id='${mdl.getVersionlessID()}' class='settingsBaseMod settings${submodules ? 'Sub' : ''}Mod' ${val ? 'enabled' : ''}>
+                    <div class='settingsModContent'>
+                        <div class='settingsModMainWrapper'>
+                            <div class='settingsModStatus'></div>
+                            <div class='settingsModDetails'>
+                                <span class='settingsModName'>${mdl.getName()}</span>
+                                <span class='settingsModVersion'>v${mdl.getVersion()}</span>
                             </div>
                         </div>
-                        <label class="toggleSwitch">
-                            <input type="checkbox" formod="${mdl.getVersionlessID()}" ${val ? 'checked' : ''}>
-                            <span class="toggleSwitchSlider"></span>
+                        <label class='toggleSwitch'>
+                            <input type='checkbox' formod='${mdl.getVersionlessID()}' ${val ? 'checked' : ''}>
+                            <span class='toggleSwitchSlider'></span>
                         </label>
                     </div>
-                    ${mdl.hasSubModules() ? `<div class="settingsSubModContainer">
+                    ${mdl.hasSubModules() ? `<div class='settingsSubModContainer'>
                         ${Object.values(parseModulesForUI(mdl.getSubModules(), true, conf.mods)).join('')}
                     </div>` : ''}
                 </div>`
@@ -659,20 +658,20 @@ function resolveDropinModsForUI(){
     let dropinMods = ''
 
     for(dropin of CACHE_DROPIN_MODS){
-        dropinMods += `<div id="${dropin.fullName}" class="settingsBaseMod settingsDropinMod" ${!dropin.disabled ? 'enabled' : ''}>
-                    <div class="settingsModContent">
-                        <div class="settingsModMainWrapper">
-                            <div class="settingsModStatus"></div>
-                            <div class="settingsModDetails">
-                                <span class="settingsModName">${dropin.name}</span>
-                                <div class="settingsDropinRemoveWrapper">
-                                    <button class="settingsDropinRemoveButton" remmod="${dropin.fullName}">Enlever</button>
+        dropinMods += `<div id='${dropin.fullName}' class='settingsBaseMod settingsDropinMod' ${!dropin.disabled ? 'enabled' : ''}>
+                    <div class='settingsModContent'>
+                        <div class='settingsModMainWrapper'>
+                            <div class='settingsModStatus'></div>
+                            <div class='settingsModDetails'>
+                                <span class='settingsModName'>${dropin.name}</span>
+                                <div class='settingsDropinRemoveWrapper'>
+                                    <button class='settingsDropinRemoveButton' remmod='${dropin.fullName}'>Enlever</button>
                                 </div>
                             </div>
                         </div>
-                        <label class="toggleSwitch">
-                            <input type="checkbox" formod="${dropin.fullName}" dropin ${!dropin.disabled ? 'checked' : ''}>
-                            <span class="toggleSwitchSlider"></span>
+                        <label class='toggleSwitch'>
+                            <input type='checkbox' formod='${dropin.fullName}' dropin ${!dropin.disabled ? 'checked' : ''}>
+                            <span class='toggleSwitchSlider'></span>
                         </label>
                     </div>
                 </div>`
@@ -870,22 +869,22 @@ function loadSelectedServerOnModsTab(){
     const serv = DistroManager.getDistribution().getServer(ConfigManager.getSelectedServer())
 
     document.getElementById('settingsSelServContent').innerHTML = `
-        <img class="serverListingImg" src="${serv.getIcon()}"/>
-        <div class="serverListingDetails">
-            <span class="serverListingName">${serv.getName()}</span>
-            <span class="serverListingDescription">${serv.getDescription()}</span>
-            <div class="serverListingInfo">
-                <div class="serverListingVersion">${serv.getMinecraftVersion()}</div>
-                <div class="serverListingRevision">${serv.getVersion()}</div>
-                ${serv.isMainServer() ? `<div class="serverListingStarWrapper">
-                    <svg id="Layer_1" viewBox="0 0 107.45 104.74" width="20px" height="20px">
+        <img class='serverListingImg' src='${serv.getIcon()}'/>
+        <div class='serverListingDetails'>
+            <span class='serverListingName'>${serv.getName()}</span>
+            <span class='serverListingDescription'>${serv.getDescription()}</span>
+            <div class='serverListingInfo'>
+                <div class='serverListingVersion'>${serv.getMinecraftVersion()}</div>
+                <div class='serverListingRevision'>${serv.getVersion()}</div>
+                ${serv.isMainServer() ? `<div class='serverListingStarWrapper'>
+                    <svg id='Layer_1' viewBox='0 0 107.45 104.74' width='20px' height='20px'>
                         <defs>
                             <style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#fff;stroke-miterlimit:10;}</style>
                         </defs>
-                        <path class="cls-1" d="M100.93,65.54C89,62,68.18,55.65,63.54,52.13c2.7-5.23,18.8-19.2,28-27.55C81.36,31.74,63.74,43.87,58.09,45.3c-2.41-5.37-3.61-26.52-4.37-39-.77,12.46-2,33.64-4.36,39-5.7-1.46-23.3-13.57-33.49-20.72,9.26,8.37,25.39,22.36,28,27.55C39.21,55.68,18.47,62,6.52,65.55c12.32-2,33.63-6.06,39.34-4.9-.16,5.87-8.41,26.16-13.11,37.69,6.1-10.89,16.52-30.16,21-33.9,4.5,3.79,14.93,23.09,21,34C70,86.84,61.73,66.48,61.59,60.65,67.36,59.49,88.64,63.52,100.93,65.54Z"/>
-                        <circle class="cls-2" cx="53.73" cy="53.9" r="38"/>
+                        <path class='cls-1' d='M100.93,65.54C89,62,68.18,55.65,63.54,52.13c2.7-5.23,18.8-19.2,28-27.55C81.36,31.74,63.74,43.87,58.09,45.3c-2.41-5.37-3.61-26.52-4.37-39-.77,12.46-2,33.64-4.36,39-5.7-1.46-23.3-13.57-33.49-20.72,9.26,8.37,25.39,22.36,28,27.55C39.21,55.68,18.47,62,6.52,65.55c12.32-2,33.63-6.06,39.34-4.9-.16,5.87-8.41,26.16-13.11,37.69,6.1-10.89,16.52-30.16,21-33.9,4.5,3.79,14.93,23.09,21,34C70,86.84,61.73,66.48,61.59,60.65,67.36,59.49,88.64,63.52,100.93,65.54Z'/>
+                        <circle class='cls-2' cx='53.73' cy='53.9' r='38'/>
                     </svg>
-                    <span class="serverListingStarTooltip">Serveur principal</span>
+                    <span class='serverListingStarTooltip'>Serveur principal</span>
                 </div>` : ''}
             </div>
         </div>
@@ -1295,11 +1294,11 @@ function populateSettingsUpdateInformation(data){
         populateVersionInformation(data.version, settingsUpdateVersionValue, settingsUpdateVersionTitle, settingsUpdateVersionCheck)
         
         if(process.platform === 'darwin'){
-            settingsUpdateButtonStatus('Télécharger depuis GitHub<span style="font-size: 10px;color: gray;text-shadow: none !important;">Fermez le lanceur et exécutez le dmg pour mettre à jour.</span>', false, () => {
+            settingsUpdateButtonStatus('Télécharger depuis GitHub puis fermez le lanceur et exécutez le dmg pour mettre à jour.', false, () => {
                 shell.openExternal(data.darwindownload)
-            })
-        } else {
-            settingsUpdateButtonStatus('Téléchargement..', true)
+            }
+            )} else {
+            settingsUpdateButtonStatus('Téléchargement en cours..', true)
         }
     } else {
         settingsUpdateTitle.innerHTML = 'Vous exécutez la dernière version'
