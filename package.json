@@ -1,6 +1,6 @@
 {
   "name": "adlclauncher",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "productName": "Lanceur de l'augure",
   "description": "Lanceur de jeu Minecraft personalisé",
   "author": "Avnyr Tokirawa (https://github.com/AvnyrTokirawa)",
@@ -49,6 +49,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Secteur42/AdlC-Launcher.git"
+    "url": "git+https://github.com/AdlC-Network/AdlC-Launcher.git"
   }
 }

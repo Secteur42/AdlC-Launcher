@@ -9,8 +9,8 @@
   "servers": [
     {
       "id": "srv-rp-1.16.5",
-      "name": "Secteur 42 - RP",
-      "description": "Serveur jeu de rôle, whitelisté (voir discord)",
+      "name": "AdlC - Network (Normal)",
+      "description": "Serveur principal",
       "icon": "https://raw.githubusercontent.com/Secteur42/AdlC-Launcher/main/app/assets/images/logo-rp.png",
       "version": "0.0.6",
       "address": "mc.secteur42.org:25565",
