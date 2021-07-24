@@ -785,8 +785,8 @@ body, button {
 
 /* Disclaimer text styles. */
 .loginDisclaimerText {
-    font-size: 7px;
-    color: #848484;
+    font-size: 12px;
+    color: #b75feb81;
     font-weight: bold;
     text-align: center;
 }
