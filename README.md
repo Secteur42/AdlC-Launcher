@@ -1,67 +1,69 @@
-<p align="center"><img src="./app/assets/images/SealCircle.png" width="150px" height="150px" alt="aventium softworks"></p>
+<p align="center"><img src="./app/assets/images/SealCircle.png" width="150px" height="150px" alt="Adlc Network"></p>
 
 <h1 align="center">AdlC Launcher</h1>
+<h4 align="center">FR Launcher</h4>
 
-[![Build/release](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/gen.yml/badge.svg?branch=main)](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/gen.yml)
-<em><h5 align="center">(formerly Electron Launcher)</h5></em>
+[![CodeQL](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/codeql-analysis.yml)
+[![Build/release](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/gen.yml/badge.svg)](https://github.com/AdlC-Network/AdlC-Launcher/actions/workflows/gen.yml)
+
+<em><h5 align="center">(à partir du Helion Launcher)</h5></em>
 
 
-## Features
+## Caractéristiques
 
-* 🔒 Full account management.
-  * Add multiple accounts and easily switch between them.
-  * Credentials are never stored and transmitted directly to Mojang.
-* 📂 Efficient asset management.
-  * Receive client updates as soon as we release them.
-  * Files are validated before launch. Corrupt or incorrect files will be redownloaded.
-* ☕ **Automatic Java validation.**
-  * If you have an incompatible version of Java installed, we'll install the right one *for you*.
-  * You do not need to have Java installed to run the launcher.
-* 📰 News feed natively built into the launcher.
-* ⚙️ Intuitive settings management, including a Java control panel.
-* Supports all of our servers.
-  * Switch between server configurations with ease.
-  * View the player count of the selected server.
-* Automatic updates. That's right, the launcher updates itself.
-*  View the status of Mojang's services.
+* 🔒 Gestion complète des comptes.
+  * Ajoutez plusieurs comptes et passez facilement de l'un à l'autre.
+  * Les informations d'identification ne sont jamais stockées et transmises directement à Mojang.
+* 📂 Gestion efficace des ressources.
+  * Recevez les mises à jour des clients dès que nous les publions.
+  * Les fichiers sont validés avant le lancement. Les fichiers corrompus ou incorrects seront retéléchargés.
+* ☕ **Validation automatique de Java.**
+  * Si vous avez installé une version incompatible de Java, nous installerons la bonne version *pour vous*.
+  * Vous n'avez pas besoin d'avoir Java installé pour exécuter le lanceur.
+* 📰 Fil d'actualité intégré nativement au lanceur.
+* ⚙️ Gestion intuitive des paramètres, y compris un panneau de contrôle Java.
+* Supporte tous nos serveurs.
+  * Passez facilement d'une configuration de serveur à une autre.
+  * Afficher le nombre de joueurs du serveur sélectionné.
+* Mises à jour automatiques. C'est vrai, le lanceur se met à jour tout seul.
+* Voir l'état des services de Mojang.
 
-This is not an exhaustive list. Download and install the launcher to gauge all it can do!
+Cette liste n'est pas exhaustive. Téléchargez et installez le lanceur pour jauger tout ce qu'il peut faire !
 
-#### Need Help? [Check the wiki.](https://adlc.network/w/index.php?title=Launcher)
+#### Besoin d'aide ? [Check the wiki.](https://adlc.network/w/index.php?title=Launcher)
 
-#### Like the project? Leave a ⭐ star on the repository!
+#### Vous aimez le projet ? Laissez une étoile ⭐ sur le repertoire !
 
-## Downloads
+## Téléchargements
 
-You can download from [GitHub Releases](https://github.com/AdlC-Network/AdlC-Launcher/releases)
+Vous pouvez télécharger à partir de [GitHub Releases](https://github.com/AdlC-Network/AdlC-Launcher/releases)
 
-#### Latest Release
+#### Dernière version
 
 [![](https://img.shields.io/github/release/Secteur42/AdlC-Launcher.svg?style=flat-square)](https://github.com/AdlC-Network/AdlC-Launcher/releases/latest)
 
-#### Latest Pre-Release
+#### Dernière pré-version
 [![](https://img.shields.io/github/release/Secteur42/AdlC-Launcher/all.svg?style=flat-square)](https://github.com/AdlC-Network/AdlC-Launcher/releases)
 
-**Supported Platforms**
+**Plateformes prises en charge**
 
-If you download from the [Releases](https://github.com/AdlC-Network/AdlC-Launcher/releases) tab, select the installer for your system.
+Si vous téléchargez à partir du site [Releases](https://github.com/AdlC-Network/AdlC-Launcher/releases), sélectionnez le programme d'installation correspondant à votre système.
 
 | Platform | File |
 | -------- | ---- |
 | Windows x64 | `AdlC-Launcher-setup-VERSION.exe` |
-| macOS | `AdlC-Launcher-VERSION.dmg` |
 | Linux x64 | `AdlC-Launcher-VERSION-x86_64.AppImage` |
 
 ## Console
 
-To open the console, use the following keybind.
+Pour ouvrir la console, utilisez le keybind suivant.
 
 ```console
 ctrl + shift + i
 ```
 
-Ensure that you have the console tab selected. Do not paste anything into the console unless you are 100% sure of what it will do. Pasting the wrong thing can expose sensitive information.
+Assurez-vous que vous avez sélectionné l'onglet console. Ne collez rien dans la console si vous n'êtes pas sûr à 100% de ce que cela va faire. Coller la mauvaise chose peut exposer des informations sensibles.
 
-#### Export Output to a File
+#### Exporter la sortie vers un fichier (message d'erreur)
 
-If you want to export the console output, simply right click anywhere on the console and click **Save as..**
+Si vous voulez exporter la sortie de la console, il suffit de faire un clic droit n'importe où sur la console et de cliquer sur **Save as..**.
