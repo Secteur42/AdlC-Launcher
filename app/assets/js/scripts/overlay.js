@@ -10,10 +10,10 @@
  * @returns {boolean} Whether or not the overlay is visible.
  */
 function isOverlayVisible(){
-    return document.getElementById('main').hasAttribute('overlay')
+    return document.getElementById('main').hasAttribute('overlay');
 }
 
-let overlayHandlerContent
+let overlayHandlerContent;
 
 /**
  * Overlay keydown handler for a non-dismissable overlay.
@@ -22,7 +22,7 @@ let overlayHandlerContent
  */
 function overlayKeyHandler (e){
     if(e.key === 'Enter' || e.key === 'Escape'){
-        document.getElementById(overlayHandlerContent).getElementsByClassName('overlayKeybindEnter')[0].click()
+        document.getElementById(overlayHandlerContent).getElementsByClassName('overlayKeybindEnter')[0].click();
     }
 }
 /**
@@ -32,9 +32,9 @@ function overlayKeyHandler (e){
  */
 function overlayKeyDismissableHandler (e){
     if(e.key === 'Enter'){
-        document.getElementById(overlayHandlerContent).getElementsByClassName('overlayKeybindEnter')[0].click()
+        document.getElementById(overlayHandlerContent).getElementsByClassName('overlayKeybindEnter')[0].click();
     } else if(e.key === 'Escape'){
-        document.getElementById(overlayHandlerContent).getElementsByClassName('overlayKeybindEsc')[0].click()
+        document.getElementById(overlayHandlerContent).getElementsByClassName('overlayKeybindEsc')[0].click();
     }
 }
 
@@ -46,14 +46,14 @@ function overlayKeyDismissableHandler (e){
  * @param {boolean} dismissable Whether or not the overlay is dismissable 
  */
 function bindOverlayKeys(state, content, dismissable){
-    overlayHandlerContent = content
-    document.removeEventListener('keydown', overlayKeyHandler)
-    document.removeEventListener('keydown', overlayKeyDismissableHandler)
+    overlayHandlerContent = content;
+    document.removeEventListener('keydown', overlayKeyHandler);
+    document.removeEventListener('keydown', overlayKeyDismissableHandler);
     if(state){
         if(dismissable){
-            document.addEventListener('keydown', overlayKeyDismissableHandler)
+            document.addEventListener('keydown', overlayKeyDismissableHandler);
         } else {
-            document.addEventListener('keydown', overlayKeyHandler)
+            document.addEventListener('keydown', overlayKeyHandler);
         }
     }
 }
@@ -67,59 +67,59 @@ function bindOverlayKeys(state, content, dismissable){
  */
 function toggleOverlay(toggleState, dismissable = false, content = 'overlayContent'){
     if(toggleState == null){
-        toggleState = !document.getElementById('main').hasAttribute('overlay')
+        toggleState = !document.getElementById('main').hasAttribute('overlay');
     }
     if(typeof dismissable === 'string'){
-        content = dismissable
-        dismissable = false
+        content = dismissable;
+        dismissable = false;
     }
-    bindOverlayKeys(toggleState, content, dismissable)
+    bindOverlayKeys(toggleState, content, dismissable);
     if(toggleState){
-        document.getElementById('main').setAttribute('overlay', true)
+        document.getElementById('main').setAttribute('overlay', true);
         // Make things untabbable.
-        $('#main *').attr('tabindex', '-1')
-        $('#' + content).parent().children().hide()
-        $('#' + content).show()
+        $('#main *').attr('tabindex', '-1');
+        $('#' + content).parent().children().hide();
+        $('#' + content).show();
         if(dismissable){
-            $('#overlayDismiss').show()
+            $('#overlayDismiss').show();
         } else {
-            $('#overlayDismiss').hide()
+            $('#overlayDismiss').hide();
         }
         $('#overlayContainer').fadeIn({
             duration: 250,
             start: () => {
                 if(getCurrentView() === VIEWS.settings){
-                    document.getElementById('settingsContainer').style.backgroundColor = 'transparent'
+                    document.getElementById('settingsContainer').style.backgroundColor = 'transparent';
                 }
             }
-        })
+        });
     } else {
-        document.getElementById('main').removeAttribute('overlay')
+        document.getElementById('main').removeAttribute('overlay');
         // Make things tabbable.
-        $('#main *').removeAttr('tabindex')
+        $('#main *').removeAttr('tabindex');
         $('#overlayContainer').fadeOut({
             duration: 250,
             start: () => {
                 if(getCurrentView() === VIEWS.settings){
-                    document.getElementById('settingsContainer').style.backgroundColor = 'rgba(0, 0, 0, 0.50)'
+                    document.getElementById('settingsContainer').style.backgroundColor = 'rgba(0, 0, 0, 0.50)';
                 }
             },
             complete: () => {
-                $('#' + content).parent().children().hide()
-                $('#' + content).show()
+                $('#' + content).parent().children().hide();
+                $('#' + content).show();
                 if(dismissable){
-                    $('#overlayDismiss').show()
+                    $('#overlayDismiss').show();
                 } else {
-                    $('#overlayDismiss').hide()
+                    $('#overlayDismiss').hide();
                 }
             }
-        })
+        });
     }
 }
 
 function toggleServerSelection(toggleState){
-    prepareServerSelectionList()
-    toggleOverlay(toggleState, true, 'serverSelectContent')
+    prepareServerSelectionList();
+    toggleOverlay(toggleState, true, 'serverSelectContent');
 }
 
 /**
@@ -131,10 +131,10 @@ function toggleServerSelection(toggleState){
  * @param {string} dismiss Dismiss button text.
  */
 function setOverlayContent(title, description, acknowledge, dismiss = 'Dismiss'){
-    document.getElementById('overlayTitle').innerHTML = title
-    document.getElementById('overlayDesc').innerHTML = description
-    document.getElementById('overlayAcknowledge').innerHTML = acknowledge
-    document.getElementById('overlayDismiss').innerHTML = dismiss
+    document.getElementById('overlayTitle').innerHTML = title;
+    document.getElementById('overlayDesc').innerHTML = description;
+    document.getElementById('overlayAcknowledge').innerHTML = acknowledge;
+    document.getElementById('overlayDismiss').innerHTML = dismiss;
 }
 
 /**
@@ -146,10 +146,10 @@ function setOverlayContent(title, description, acknowledge, dismiss = 'Dismiss')
 function setOverlayHandler(handler){
     if(handler == null){
         document.getElementById('overlayAcknowledge').onclick = () => {
-            toggleOverlay(false)
-        }
+            toggleOverlay(false);
+        };
     } else {
-        document.getElementById('overlayAcknowledge').onclick = handler
+        document.getElementById('overlayAcknowledge').onclick = handler;
     }
 }
 
@@ -162,110 +162,110 @@ function setOverlayHandler(handler){
 function setDismissHandler(handler){
     if(handler == null){
         document.getElementById('overlayDismiss').onclick = () => {
-            toggleOverlay(false)
-        }
+            toggleOverlay(false);
+        };
     } else {
-        document.getElementById('overlayDismiss').onclick = handler
+        document.getElementById('overlayDismiss').onclick = handler;
     }
 }
 
 /* Server Select View */
 
 document.getElementById('serverSelectConfirm').addEventListener('click', () => {
-    const listings = document.getElementsByClassName('serverListing')
+    const listings = document.getElementsByClassName('serverListing');
     for(let i=0; i<listings.length; i++){
         if(listings[i].hasAttribute('selected')){
-            const serv = DistroManager.getDistribution().getServer(listings[i].getAttribute('servid'))
-            updateSelectedServer(serv)
-            refreshServerStatus(true)
-            toggleOverlay(false)
-            return
+            const serv = DistroManager.getDistribution().getServer(listings[i].getAttribute('servid'));
+            updateSelectedServer(serv);
+            refreshServerStatus(true);
+            toggleOverlay(false);
+            return;
         }
     }
     // None are selected? Not possible right? Meh, handle it.
     if(listings.length > 0){
-        const serv = DistroManager.getDistribution().getServer(listings[i].getAttribute('servid'))
-        updateSelectedServer(serv)
-        toggleOverlay(false)
+        const serv = DistroManager.getDistribution().getServer(listings[i].getAttribute('servid'));
+        updateSelectedServer(serv);
+        toggleOverlay(false);
     }
-})
+});
 
 document.getElementById('accountSelectConfirm').addEventListener('click', () => {
-    const listings = document.getElementsByClassName('accountListing')
+    const listings = document.getElementsByClassName('accountListing');
     for(let i=0; i<listings.length; i++){
         if(listings[i].hasAttribute('selected')){
-            const authAcc = ConfigManager.setSelectedAccount(listings[i].getAttribute('uuid'))
-            ConfigManager.save()
-            updateSelectedAccount(authAcc)
-            toggleOverlay(false)
-            validateSelectedAccount()
-            return
+            const authAcc = ConfigManager.setSelectedAccount(listings[i].getAttribute('uuid'));
+            ConfigManager.save();
+            updateSelectedAccount(authAcc);
+            toggleOverlay(false);
+            validateSelectedAccount();
+            return;
         }
     }
     // None are selected? Not possible right? Meh, handle it.
     if(listings.length > 0){
-        const authAcc = ConfigManager.setSelectedAccount(listings[0].getAttribute('uuid'))
-        ConfigManager.save()
-        updateSelectedAccount(authAcc)
-        toggleOverlay(false)
-        validateSelectedAccount()
+        const authAcc = ConfigManager.setSelectedAccount(listings[0].getAttribute('uuid'));
+        ConfigManager.save();
+        updateSelectedAccount(authAcc);
+        toggleOverlay(false);
+        validateSelectedAccount();
     }
-})
+});
 
 // Bind server select cancel button.
 document.getElementById('serverSelectCancel').addEventListener('click', () => {
-    toggleOverlay(false)
-})
+    toggleOverlay(false);
+});
 
 document.getElementById('accountSelectCancel').addEventListener('click', () => {
     $('#accountSelectContent').fadeOut(250, () => {
-        $('#overlayContent').fadeIn(250)
-    })
-})
+        $('#overlayContent').fadeIn(250);
+    });
+});
 
 function setServerListingHandlers(){
-    const listings = Array.from(document.getElementsByClassName('serverListing'))
+    const listings = Array.from(document.getElementsByClassName('serverListing'));
     listings.map((val) => {
         val.onclick = e => {
             if(val.hasAttribute('selected')){
-                return
+                return;
             }
-            const cListings = document.getElementsByClassName('serverListing')
+            const cListings = document.getElementsByClassName('serverListing');
             for(let i=0; i<cListings.length; i++){
                 if(cListings[i].hasAttribute('selected')){
-                    cListings[i].removeAttribute('selected')
+                    cListings[i].removeAttribute('selected');
                 }
             }
-            val.setAttribute('selected', '')
-            document.activeElement.blur()
-        }
-    })
+            val.setAttribute('selected', '');
+            document.activeElement.blur();
+        };
+    });
 }
 
 function setAccountListingHandlers(){
-    const listings = Array.from(document.getElementsByClassName('accountListing'))
+    const listings = Array.from(document.getElementsByClassName('accountListing'));
     listings.map((val) => {
         val.onclick = e => {
             if(val.hasAttribute('selected')){
-                return
+                return;
             }
-            const cListings = document.getElementsByClassName('accountListing')
+            const cListings = document.getElementsByClassName('accountListing');
             for(let i=0; i<cListings.length; i++){
                 if(cListings[i].hasAttribute('selected')){
-                    cListings[i].removeAttribute('selected')
+                    cListings[i].removeAttribute('selected');
                 }
             }
-            val.setAttribute('selected', '')
-            document.activeElement.blur()
-        }
-    })
+            val.setAttribute('selected', '');
+            document.activeElement.blur();
+        };
+    });
 }
 
 function populateServerListings(){
-    const distro = DistroManager.getDistribution()
-    const giaSel = ConfigManager.getSelectedServer()
-    const servers = distro.getServers()
-    let htmlString = ''
+    const distro = DistroManager.getDistribution();
+    const giaSel = ConfigManager.getSelectedServer();
+    const servers = distro.getServers();
+    let htmlString = '';
     for(const serv of servers){
         htmlString += `<button class="serverListing" servid="${serv.getID()}" ${serv.getID() === giaSel ? 'selected' : ''}>
             <img class="serverListingImg" src="${serv.getIcon()}"/>
@@ -287,32 +287,32 @@ function populateServerListings(){
                     </div>` : ''}
                 </div>
             </div>
-        </button>`
+        </button>`;
     }
-    document.getElementById('serverSelectListScrollable').innerHTML = htmlString
+    document.getElementById('serverSelectListScrollable').innerHTML = htmlString;
 
 }
 
 function populateAccountListings(){
-    const accountsObj = ConfigManager.getAuthAccounts()
-    const accounts = Array.from(Object.keys(accountsObj), v=>accountsObj[v])
-    let htmlString = ''
+    const accountsObj = ConfigManager.getAuthAccounts();
+    const accounts = Array.from(Object.keys(accountsObj), v=>accountsObj[v]);
+    let htmlString = '';
     for(let i=0; i<accounts.length; i++){
         htmlString += `<button class="accountListing" uuid="${accounts[i].uuid}" ${i===0 ? 'selected' : ''}>
             <img src="https://crafatar.com/renders/head/${accounts[i].uuid}?scale=2&default=MHF_Steve&overlay">
             <div class="accountListingName">${accounts[i].displayName}</div>
-        </button>`
+        </button>`;
     }
-    document.getElementById('accountSelectListScrollable').innerHTML = htmlString
+    document.getElementById('accountSelectListScrollable').innerHTML = htmlString;
 
 }
 
 function prepareServerSelectionList(){
-    populateServerListings()
-    setServerListingHandlers()
+    populateServerListings();
+    setServerListingHandlers();
 }
 
 function prepareAccountSelectionList(){
-    populateAccountListings()
-    setAccountListingHandlers()
+    populateAccountListings();
+    setAccountListingHandlers();
 }
